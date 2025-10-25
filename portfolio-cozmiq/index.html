@@ -6,32 +6,135 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <!-- Header -->
-<header class="cozmiq-header">
-    <div class="container">
-        <div class="header-pill">
-            <div class="logo">
-                <a href="#" class="brand">
-                    <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667c6cece51815be19e61cc5_header-logo-portfolix-x-webflow-template.png" alt="">
-                </a>
+    <header class="cozmiq-header">
+        <div class="container">
+            <div class="header-pill">
+                <div class="logo">
+                    <a href="#" class="brand">
+                        <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667c6cece51815be19e61cc5_header-logo-portfolix-x-webflow-template.png" alt="">
+                    </a>
+                </div>
+                <nav class="primary-nav" aria-label="Primary">
+                    <ul class="nav-list">
+                        <li><a href="#home"   class="nav-link">Home</a></li>
+                        <li><a href="#about"  class="nav-link">About</a></li>
+                        <li><a href="#work"   class="nav-link">Work</a></li>
+                        <li><a href="#shop"   class="nav-link">Shop</a></li>
+                        <li><a href="#blog"   class="nav-link">Blog</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="primary-nav" aria-label="Primary">
-                <ul class="nav-list">
-                    <li><a href="#home"   class="nav-link">Home</a></li>
-                    <li><a href="#about"  class="nav-link">About</a></li>
-                    <li><a href="#work"   class="nav-link">Work</a></li>
-                    <li><a href="#shop"   class="nav-link">Shop</a></li>
-                    <li><a href="#blog"   class="nav-link">Blog</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
         </div>
-    </div>
-</header>
+    </header>
+    <!-- End Header -->
+
+    <!-- about hero section -->
+     <section class="about-hero">
+        <div class="about-hero__wrap">
+            <div class="about-hero__text">
+                <p class="eyebrow">Hi, I’m <span class="nowrap">John Carter</span></p>
+
+                <h1 class="about-hero__title">
+                    <span class="wave" aria-hidden="true"><img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667de2707b73866eb2d19763_high-five-icon-portfolix-x-webflow-template.png" alt=""></span>Product <br />Designer from <br /><span class="nowrap">New York</span>
+                </h1>
+
+                <p class="about-hero__desc">
+                    Lorem ipsum dolor sit amet consectetur justo eget molestie nunc etiam montes a
+                    netus at nisl pellentesque vel nunc urna felis bibendum donec cras
+                    <span class="nowrap">viverra viverra.</span>
+                </p>
+            </div>
+
+            <!-- Right: photo card with floating badges -->
+            <div class="about-hero__visual">
+                <!-- floating badges -->
+                <div class="chip chip--ux category-1 rotate--4">
+                    <span class="chip__dot"></span> UX Design
+                </div>
+
+                <div class="chip chip--icons category-2 rotate--8">
+                    <span class="chip__dot"></span> Icons
+                </div>
+
+                <div class="chip chip--brand category-3 rotate--8">
+                    <span class="chip__dot"></span> Branding
+                </div>
+
+                <div class="chip chip--web category-4 rotate-8">
+                    <span class="chip__dot"></span> Web Design
+                </div>
+
+                <!-- main card -->
+                <figure class="profile-card">
+                    <img
+                    src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600&auto=format&fit=crop"
+                    alt="Portrait of John Carter"
+                    class="profile-card__img"
+                    />
+
+                    <figcaption class="availability">
+                    <span class="availability__dot"></span>
+                    <span class="availability__text">Available for new projects</span>
+                    </figcaption>
+
+                    <span class="profile-card__pin"></span>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <!-- end about hero section -->
+
+
+    <section class="portfolio-strip">
+        <div class="container">
+            <div class="swiper" id="portfolioSwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <a class="portfolio-card" href="https://example.com/techbeta-x" aria-label="Techbeta X Project">
+                            <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/66c60cb6071796664dee59c2_image-1-projects-portfolix-x-webflow-template.png" alt="Techbeta X Project preview">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-card" href="https://example.com/techbeta-x" aria-label="Techbeta X Project">
+                            <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/66c60cb6071796664dee59c2_image-1-projects-portfolix-x-webflow-template.png" alt="Techbeta X Project preview">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-card" href="https://example.com/techbeta-x" aria-label="Techbeta X Project">
+                            <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/66c60cb6071796664dee59c2_image-1-projects-portfolix-x-webflow-template.png" alt="Techbeta X Project preview">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-card" href="https://example.com/techbeta-x" aria-label="Techbeta X Project">
+                            <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/66c60cb6071796664dee59c2_image-1-projects-portfolix-x-webflow-template.png" alt="Techbeta X Project preview">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-card" href="https://example.com/techbeta-x" aria-label="Techbeta X Project">
+                            <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/66c60cb6071796664dee59c2_image-1-projects-portfolix-x-webflow-template.png" alt="Techbeta X Project preview">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a class="portfolio-card" href="https://example.com/techbeta-x" aria-label="Techbeta X Project">
+                            <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/66c60cb6071796664dee59c2_image-1-projects-portfolix-x-webflow-template.png" alt="Techbeta X Project preview">
+                        </a>
+                    </div>
+                   
+                </div>
+                <div class="left-shadow"></div>
+                <div class="right-shadow"></div>
+            </div>
+        </div>
+    </section>
+
 
     
 
@@ -39,6 +142,7 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

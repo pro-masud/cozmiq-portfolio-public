@@ -3800,4 +3800,301 @@ textarea {
   transform: scale(0.95);
 }
 
+.about-hero {
+  background: var(--bg);
+  padding: clamp(48px, 8vw, 96px) 20px;
+}
+.about-hero__wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(24px, 5vw, 56px);
+}
+.about-hero {
+  /* Left */
+}
+.about-hero__text {
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.about-hero .eyebrow {
+  margin: 0 0 8px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--muted);
+}
+.about-hero__title {
+  margin: 0 0 24px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-family: var(--cq-portfolio-fonts-roboto);
+  font-size: clamp(40px, 8vw, 96px);
+  color: var(--text);
+}
+.about-hero__title .wave {
+  margin-right: 12px;
+  display: inline-block;
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+}
+.about-hero__title .wave img {
+  width: 100%;
+  height: 100%;
+  vertical-align: unset;
+}
+.about-hero__title .nowrap {
+  white-space: nowrap;
+}
+.about-hero__desc {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.7;
+}
+.about-hero {
+  /* Right */
+}
+.about-hero__visual {
+  position: relative;
+  min-height: 460px; /* creates room for floating chips */
+}
+
+/* Profile card */
+.profile-card {
+  position: absolute;
+  inset: auto 0 0 26%;
+  transform: translateX(-20%) rotate(6deg);
+  width: 336px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow), 0 24px 60px rgba(16, 24, 40, 0.1);
+  border-radius: 14px;
+  padding: 12px 12px 16px;
+  display: grid;
+  gap: 10px;
+}
+.profile-card__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.profile-card__pin {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 25px;
+  right: 25px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(16, 24, 40, 0.15) inset;
+}
+
+/* Availability pill */
+.availability {
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  justify-self: center;
+}
+.availability__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #65d56e, #27b34a);
+  box-shadow: 0 0 0 2px #e5f6ea inset;
+  display: inline-block;
+}
+.availability__text {
+  color: #5b6470;
+  font-size: 14px;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+
+/* Floating chips / badges */
+.chip {
+  --chip-bg: #dbeafe;
+  --chip-border: rgba(0,0,0,.07);
+  --chip-text: #2563eb;
+  --chip-shadow: 0 10px 24px rgba(16, 24, 40, .14);
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border: 1px solid var(--chip-border);
+  box-shadow: var(--chip-shadow);
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+.chip .chip__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
+}
+
+/* Individual chip themes + placement */
+.chip--ux {
+  --chip-bg: linear-gradient(180deg, #dbe8ff, #c7e1ff);
+  --chip-text: #4f7ddd;
+  top: 10px;
+  left: -10px;
+  transform: translate(-10%, -35%) rotate(-6deg);
+}
+
+.chip--icons {
+  --chip-bg: linear-gradient(180deg, #ffe1cc, #ffd1bd);
+  --chip-text: #f97316;
+  right: -14px;
+  top: 60px;
+}
+
+.chip--brand {
+  --chip-bg: linear-gradient(180deg, #ffe9b8, #ffd689);
+  --chip-text: #d97706;
+  right: -28px;
+  top: 148px;
+}
+
+.chip--web {
+  --chip-bg: linear-gradient(180deg, #efe0ff, #e1d2ff);
+  --chip-text: #7c3aed;
+  bottom: 40px;
+  right: -24px;
+  transform: rotate(10deg);
+}
+
+/* small rotation helpers (like screenshot) */
+.rotate--4 {
+  transform: rotate(-4deg);
+}
+
+.rotate--8 {
+  transform: rotate(-8deg);
+}
+
+.rotate-8 {
+  transform: rotate(8deg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-hero__wrap {
+    grid-template-columns: 1fr;
+  }
+  .about-hero__visual {
+    min-height: 520px;
+  }
+  .profile-card {
+    inset: auto auto 0 50%;
+    transform: translateX(-50%) rotate(6deg);
+  }
+  .chip--ux {
+    top: -6px;
+    left: 8%;
+    transform: rotate(-6deg);
+  }
+  .chip--icons {
+    right: 12%;
+    top: 12px;
+  }
+  .chip--brand {
+    right: 4%;
+    top: 140px;
+  }
+  .chip--web {
+    right: 6%;
+    bottom: 6px;
+  }
+}
+@media (max-width: 520px) {
+  .about-hero__title {
+    font-size: clamp(34px, 12vw, 54px);
+  }
+  .chip {
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+  .profile-card__img {
+    height: 300px;
+  }
+}
+.category-1 {
+  top: 41px;
+  left: 36px;
+  z-index: 2;
+  color: #78ABEF;
+  font-family: var(--cq-portfolio-fonts-muli);
+  font-weight: 500;
+}
+
+.category-2 {
+  right: 12px;
+  top: 130px;
+}
+
+.category-3 {
+  right: -43px;
+  top: 210px;
+}
+
+.category-4 {
+  bottom: 100px;
+  right: -30px;
+  z-index: 5;
+}
+
+.portfolio-strip .swiper {
+  position: relative;
+}
+.portfolio-strip .swiper .swiper-wrapper .swiper-slide {
+  width: 380px;
+  height: 310px;
+  border-radius: 32px;
+  object-fit: cover;
+}
+.portfolio-strip .swiper .swiper-wrapper .swiper-slide a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.portfolio-strip .swiper .swiper-wrapper .swiper-slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portfolio-strip .swiper .left-shadow {
+  background-image: linear-gradient(90deg, var(--bg), transparent);
+  width: 35%;
+  position: absolute;
+  inset: 0% auto 0% 0%;
+  z-index: 9;
+}
+.portfolio-strip .swiper .right-shadow {
+  background-image: linear-gradient(270deg, var(--bg), transparent);
+  width: 35%;
+  position: absolute;
+  inset: 0% 0% 0% auto;
+  z-index: 9;
+}
+
 /*# sourceMappingURL=style.css.map */
