@@ -1,8 +1,8 @@
 /*-----------------------------------------------------------------------------------
 
     Template Name: Example HTML Template
-    Author: Theme_Pure
-    Support: help.themepure.net
+    Author: Cozmiq Profiles
+    Support: cozmiq-agency.com/support
     Description: Example HTML Template
     Version: 1.0.0
 
@@ -123,21 +123,21 @@
 /*----------------------------------------*/
 /*  1.1 Theme Default
 /*----------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
 :root {
-  --cq-portfolio-theme-color: red;
-  --cq-portfolio-theme-sec-color: blue;
-  --cq-portfolio-black: black;
-  --cq-portfolio-white: white;
-  --cq-portfolio-grey-color: #f6f6f6;
-  --cq-portfolio-grey-color-2: #f6f6f6;
-  --cq-portfolio-grey-color-3: #f6f6f6;
-  --cq-portfolio-grey-color-4: #f6f6f6;
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --border: #ececf1;
+  --shadow: 0 1px 1px rgba(16, 24, 40, 0.04), 0 2px 8px rgba(16, 24, 40, 0.06);
+  --text: #0f172a; /* main text */
+  --muted: #80838a; /* secondary text (e.g., "Cart [0]") */
+  --brand-icon-bg: #111318; /* dark rounded square behind icons */
+  --brand-icon-fg: #ffffff; /* icon foreground */
 }
 
 :root {
-  --cq-portfolio-fonts-poppins: "Poppins", sans-serif;
-  --cq-portfolio-fonts-muli: "Muli", sans-serif;
+  --cq-portfolio-fonts-roboto: "Roboto", sans-serif;
+  --cq-portfolio-fonts-muli: "Inter", sans-serif;
 }
 
 * {
@@ -3572,6 +3572,232 @@ textarea {
 
 .pr-100 {
   padding-right: 100px;
+}
+
+.cozmiq-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: transparent;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+}
+.cozmiq-header .header-pill {
+  max-width: 700px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+/* Brand (left side) */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+.brand__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--brand-icon-bg);
+  color: var(--brand-icon-fg);
+  display: inline-grid;
+  place-items: center;
+}
+.brand__icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.brand__name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+
+/* Space between brand and right controls */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Cart (right text) */
+.cart {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  background: transparent;
+  border: 0;
+  padding: 6px 8px;
+  font: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+.cart__label {
+  font-size: 16px;
+}
+.cart__count {
+  font-size: 16px;
+}
+.cart:hover {
+  color: var(--text);
+}
+.cart:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Menu button (dark rounded square with two bars) */
+.menu-btn {
+  margin-left: 8px;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--brand-icon-bg);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+.menu-btn__bars, .menu-btn__bars::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: var(--brand-icon-fg);
+  border-radius: 2px;
+}
+.menu-btn__bars::before {
+  margin-top: 6px; /* creates the bottom bar */
+}
+.menu-btn:hover {
+  filter: brightness(1.05);
+}
+.menu-btn:active {
+  transform: translateY(1px);
+}
+.menu-btn:focus-visible {
+  outline: 2px solid var(--border);
+  outline-offset: 2px;
+}
+
+/* Small screens */
+@media (max-width: 560px) {
+  .site-header {
+    padding: 12px 12px;
+  }
+  .site-header .header-pill {
+    padding: 12px 14px;
+    border-radius: 16px;
+  }
+  .brand__name {
+    font-size: 16px;
+  }
+  .cart__label, .cart__count {
+    font-size: 14px;
+  }
+}
+.primary-nav {
+  margin-left: 16px;
+}
+.primary-nav .nav-list {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.primary-nav .nav-link {
+  display: inline-block;
+  padding: 8px 10px;
+  font-size: 15px;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.primary-nav .nav-link:hover {
+  color: var(--text);
+  background: rgba(17, 19, 24, 0.04);
+}
+.primary-nav .nav-link.is-active {
+  color: var(--text);
+}
+
+/* mobile panel */
+.mobile-panel {
+  position: fixed;
+  inset: 0 0 0 auto; /* right side drawer */
+  width: 280px;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 60;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mobile-panel .mobile-nav {
+  display: grid;
+  gap: 8px;
+}
+.mobile-panel .m-link {
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  background: rgba(17, 19, 24, 0.04);
+}
+.mobile-panel .m-link:hover {
+  background: rgba(17, 19, 24, 0.08);
+}
+.mobile-panel.open {
+  transform: translateX(0%);
+}
+
+/* responsive rules */
+@media (max-width: 900px) {
+  .primary-nav {
+    display: none;
+  } /* hide inline nav on small screens */
+  .menu-btn {
+    display: inline-grid;
+  } /* use hamburger */
+}
+@media (min-width: 901px) {
+  .mobile-panel {
+    display: none;
+  } /* no panel on desktop */
+}
+.cozmiq-header .header-pill .logo {
+  width: 134px;
+  height: 32px;
+}
+.cozmiq-header .header-pill .logo .brand {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.cozmiq-header .header-pill .logo .brand img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.25s ease;
+}
+.cozmiq-header .header-pill .logo .brand img:hover {
+  transform: scale(0.95);
 }
 
 /*# sourceMappingURL=style.css.map */
