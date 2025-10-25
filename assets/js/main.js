@@ -10,14 +10,12 @@
                 enabled: true,
                 momentum: false,             
             },
-            speed: 6000,                   
+            speed: 8000,                   
             autoplay: {
-                delay: 0,                    
+                delay: 2000,                    
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
-            allowTouchMove: true,    
-            grabCursor: true,
         });
 
         swiper.on('touchEnd', () => {

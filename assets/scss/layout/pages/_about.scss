@@ -263,3 +263,41 @@
     }
   }
 }
+
+.social-media {
+  & .socail-media-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .socail-media-left{
+      span {
+        color: #565656;
+        font-size: 18px;
+        font-family: var(--cq-portfolio-fonts-muli);
+        line-height: 27px;
+      }
+    }
+    .socail-media-right{
+      & ul{
+        display: flex;
+        align-items: center;
+       list-style: none;
+        gap: 20px;
+        & li{
+          & a{
+            display: inline-block;
+            color: #565656;
+            font-size: 18px;
+            font-family: var(--cq-portfolio-fonts-muli);
+            line-height: 27px;
+            border-bottom: 1px solid #000;
+            &:hover{
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4097,4 +4097,33 @@ textarea {
   z-index: 9;
 }
 
+.social-media .socail-media-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-media .socail-media-wrapper .socail-media-left span {
+  color: #565656;
+  font-size: 18px;
+  font-family: var(--cq-portfolio-fonts-muli);
+  line-height: 27px;
+}
+.social-media .socail-media-wrapper .socail-media-right ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+.social-media .socail-media-wrapper .socail-media-right ul li a {
+  display: inline-block;
+  color: #565656;
+  font-size: 18px;
+  font-family: var(--cq-portfolio-fonts-muli);
+  line-height: 27px;
+  border-bottom: 1px solid #000;
+}
+.social-media .socail-media-wrapper .socail-media-right ul li a:hover {
+  color: #000;
+}
+
 /*# sourceMappingURL=style.css.map */
