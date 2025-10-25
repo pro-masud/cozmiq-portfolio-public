@@ -3,8 +3,12 @@
   --surface: #f7f7f8;
   --border: #ececf1;
   --shadow: 0 1px 1px rgba(16, 24, 40, 0.04), 0 2px 8px rgba(16, 24, 40, 0.06);
-  --text: #0f172a;          /* main text */
-  --muted: #80838a;         /* secondary text (e.g., "Cart [0]") */
-  --brand-icon-bg: #111318; /* dark rounded square behind icons */
-  --brand-icon-fg: #ffffff; /* icon foreground */
+  --text: #0f172a;
+  --muted: #80838a;
+  --brand-icon-bg: #111318;
+  --brand-icon-fg: #ffffff;
+
+  --radius: 16px;
+  --radius-lg: 22px;
+  --gap: clamp(16px, 3vw, 32px);
 }
