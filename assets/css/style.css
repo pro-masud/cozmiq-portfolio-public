@@ -4270,6 +4270,14 @@ textarea {
 .about__location {
   white-space: nowrap;
 }
+.about__location img {
+  background-size: cover;
+  width: 72px;
+  min-width: 72px;
+  height: 46px;
+  display: inline-flex;
+  transform: translate(4px, 0px) rotate(-4deg);
+}
 .about__badge {
   display: inline-flex;
   align-items: center;
@@ -4287,7 +4295,7 @@ textarea {
 }
 .about__text {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.7;
   margin: 0 0 16px;
 }
@@ -4301,21 +4309,16 @@ textarea {
   list-style: none;
 }
 .feature-list .feature {
-  display: grid;
-  grid-template-columns: 28px 1fr;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  gap: 5px;
+  font-size: 24px;
+  color: var(--muted);
 }
-.feature-list .feature::before {
-  content: "";
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--brand-icon-bg);
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="white" d="M9.55 17.1 4.8 12.35l1.4-1.4 3.35 3.35 8.2-8.2 1.4 1.4z"/></svg>') no-repeat center/16px 16px;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path fill="white" d="M9.55 17.1 4.8 12.35l1.4-1.4 3.35 3.35 8.2-8.2 1.4 1.4z"/></svg>') no-repeat center/16px 16px;
-  background-color: var(--brand-icon-bg);
+.feature-list .feature img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
 }
 
 /* Small tweaks */
@@ -4329,6 +4332,107 @@ textarea {
   .about .card-frame--b {
     transform: rotate(-8deg);
   }
+}
+/* Partners / Logos Section */
+.partners {
+  padding: 120px 20px;
+  color: var(--text);
+}
+.partners__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 40px);
+}
+.partners__title {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--muted);
+  margin: 0 0 20px;
+  display: inline-block;
+}
+.partners__grid {
+  --cols: 5;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 1100px) {
+  .partners__grid {
+    --cols: 4;
+  }
+}
+@media (max-width: 920px) {
+  .partners__grid {
+    --cols: 3;
+  }
+}
+@media (max-width: 680px) {
+  .partners__grid {
+    --cols: 2;
+  }
+}
+@media (max-width: 420px) {
+  .partners__grid {
+    --cols: 1;
+  }
+}
+.partners__item {
+  min-width: 0;
+}
+
+/* Card */
+.partner-card {
+  display: block;
+  position: relative;
+  border-radius: var(--radius);
+  background: #2B2E34;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+  overflow: clip;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partner-card:hover, .partner-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 2px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.1);
+  border-color: color-mix(in oklab, var(--border), var(--text) 14%);
+}
+.partner-card {
+  /* Focus ring */
+}
+.partner-card:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px color-mix(in oklab, var(--text), transparent 70%), 0 8px 24px rgba(16, 24, 40, 0.12);
+}
+.partner-card__media {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+.partner-card img {
+  max-width: min(80%, 380px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.03));
+  transition: scale 0.25s ease;
+}
+.partner-card:hover img {
+  scale: 1.02;
+}
+
+/* Subtle divider option for very light UIs */
+.partners__grid .partner-card {
+  background: #2B2E34;
 }
 
 /*# sourceMappingURL=style.css.map */
