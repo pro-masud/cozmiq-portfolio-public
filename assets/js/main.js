@@ -1,7 +1,7 @@
 (function($) {
     $(document).ready(function() {
-        
-         // Smooth, continuous, “infinite” marquee feel
+
+        // Smooth, continuous, “infinite” marquee feel
         const swiper = new Swiper('#portfolioSwiper', {
             loop: true,                      
             slidesPerView: 3,          
@@ -21,6 +21,17 @@
         swiper.on('touchEnd', () => {
             swiper.params.autoplay.delay = 0;
             swiper.autoplay.start();
+        });
+
+        // Smooth, continuous, “infinite” marquee feel
+        var recendProject = new Swiper(".Recent-work-slider", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            centeredSlides: false,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
         });
 
     });

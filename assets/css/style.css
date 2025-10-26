@@ -4726,4 +4726,91 @@ textarea {
   padding: 7px 0;
 }
 
+.Recent-work-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Recent-work-heading .section-title h2 {
+  font-size: 64px;
+  text-align: center;
+  color: var(--brand-icon-bg);
+  font-weight: 500;
+  line-height: 71px;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.Recent-work-slider {
+  margin-top: 60px;
+}
+.Recent-work-slider .single-work-item {
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  display: inline-block;
+  transition: transform 0.5s ease;
+  background-color: #FCFCFC;
+  box-shadow: var(--shadow);
+}
+.Recent-work-slider .single-work-item a .work-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.Recent-work-slider .single-work-item a .work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: 0.4s;
+}
+.Recent-work-slider .single-work-item a .work-content {
+  padding: 24px 24px 10px;
+}
+.Recent-work-slider .single-work-item a .work-content h3 {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--brand-icon-bg);
+  font-family: var(--cq-portfolio-fonts-muli);
+  text-transform: capitalize;
+  transition: 0.4s;
+}
+.Recent-work-slider .single-work-item a .work-content .desc {
+  font-size: 18px;
+  color: var(--muted);
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.Recent-work-slider .single-work-item a .work-content .quate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.Recent-work-slider .single-work-item a .work-content .quate-btn span.qute {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 6px 0;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.Recent-work-slider .single-work-item a .work-content .quate-btn span {
+  font-size: 18px;
+  color: var(--brand-icon-bg);
+  margin: 0 0 6px 0;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.Recent-work-slider .single-work-item a .work-content .quate-btn span i {
+  margin-right: 5px;
+  transform: rotate(-45deg);
+}
+.Recent-work-slider .single-work-item a:hover h3 {
+  color: var(--muted);
+}
+.Recent-work-slider .single-work-item a:hover .work-image img {
+  transform: scale(1.1);
+}
+
+.recent-work-container {
+  max-width: 1360px;
+}
+
 /*# sourceMappingURL=style.css.map */
