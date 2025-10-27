@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/animation.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
+  <div id="smooth-wrapper">
+<div id="smooth-content">
     <!-- Header -->
     <header class="cozmiq-header">
         <div class="container">
@@ -37,59 +40,33 @@
     <!-- End Header -->
 
     <!-- about hero section -->
-     <section class="about-hero">
+    <section class="about-hero">
         <div class="about-hero__wrap">
             <div class="about-hero__text">
-                <p class="eyebrow">Hi, I’m <span class="nowrap">John Carter</span></p>
-
-                <h1 class="about-hero__title">
-                    <span class="wave" aria-hidden="true"><img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667de2707b73866eb2d19763_high-five-icon-portfolix-x-webflow-template.png" alt=""></span>Product <br />Designer from <br /><span class="nowrap">New York</span>
-                </h1>
-
-                <p class="about-hero__desc">
-                    Lorem ipsum dolor sit amet consectetur justo eget molestie nunc etiam montes a
-                    netus at nisl pellentesque vel nunc urna felis bibendum donec cras
-                    <span class="nowrap">viverra viverra.</span>
-                </p>
+            <p class="eyebrow wow animate__animated animate__fadeInDown" data-wow-delay="0.1s" data-wow-duration="600ms" data-wow-offset="80">Hi, I’m <span class="nowrap">John Carter</span></p>
+            <h1 class="about-hero__title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s" data-wow-duration="800ms" data-wow-offset="80"><span class="wave" aria-hidden="true"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.25s" data-wow-duration="700ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667de2707b73866eb2d19763_high-five-icon-portfolix-x-webflow-template.png" alt=""></span>Product <br />Designer from <br /><span class="nowrap">New York</span></h1>
+            <p class="about-hero__desc wow animate__animated animate__fadeInUp" data-wow-delay="0.35s" data-wow-duration="700ms" data-wow-offset="80">Lorem ipsum dolor sit amet consectetur justo eget molestie nunc etiam montes a netus at nisl pellentesque vel nunc urna felis bibendum donec cras <span class="nowrap">viverra viverra.</span></p>
             </div>
 
             <!-- Right: photo card with floating badges -->
             <div class="about-hero__visual">
-                <!-- floating badges -->
-                <div class="chip chip--ux category-1 rotate--4">
-                    <span class="chip__dot"></span> UX Design
-                </div>
+            <!-- floating badges (staggered) -->
+            <div class="chip chip--ux category-1 rotate--4 wow animate__animated animate__fadeInUp" data-wow-delay="0.45s" data-wow-duration="650ms" data-wow-offset="80"><span class="chip__dot"></span> UX Design</div>
+            <div class="chip chip--icons category-2 rotate--8 wow animate__animated animate__fadeInUp" data-wow-delay="0.55s" data-wow-duration="650ms" data-wow-offset="80"><span class="chip__dot"></span> Icons</div>
+            <div class="chip chip--brand category-3 rotate--8 wow animate__animated animate__fadeInUp" data-wow-delay="0.65s" data-wow-duration="650ms" data-wow-offset="80"><span class="chip__dot"></span> Branding</div>
+            <div class="chip chip--web category-4 rotate-8 wow animate__animated animate__fadeInUp" data-wow-delay="0.75s" data-wow-duration="650ms" data-wow-offset="80"><span class="chip__dot"></span> Web Design</div>
 
-                <div class="chip chip--icons category-2 rotate--8">
-                    <span class="chip__dot"></span> Icons
-                </div>
-
-                <div class="chip chip--brand category-3 rotate--8">
-                    <span class="chip__dot"></span> Branding
-                </div>
-
-                <div class="chip chip--web category-4 rotate-8">
-                    <span class="chip__dot"></span> Web Design
-                </div>
-
-                <!-- main card -->
-                <figure class="profile-card">
-                    <img
-                    src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600&auto=format&fit=crop"
-                    alt="Portrait of John Carter"
-                    class="profile-card__img"
-                    />
-
-                    <figcaption class="availability">
-                    <span class="availability__dot"></span>
-                    <span class="availability__text">Available for new projects</span>
-                    </figcaption>
-
-                    <span class="profile-card__pin"></span>
-                </figure>
+            <!-- main card -->
+            <figure class="profile-card">
+                <img class="profile-card__img wow animate__animated animate__fadeIn" data-wow-delay="0.55s" data-wow-duration="800ms" data-wow-offset="80" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600&auto=format&fit=crop" alt="Portrait of John Carter" />
+                <figcaption class="availability wow animate__animated animate__zoomIn" data-wow-delay="0.85s" data-wow-duration="650ms" data-wow-offset="80"><span class="availability__dot"></span> <span class="availability__text">Available for new projects</span></figcaption>
+                <span class="profile-card__pin wow animate__animated animate__fadeIn" data-wow-delay="0.9s" data-wow-duration="600ms" data-wow-offset="80"></span>
+            </figure>
             </div>
         </div>
     </section>
+
+
     <!-- end about hero section -->
 
     <!-- portfolio slider start -->
@@ -219,7 +196,7 @@
     <!-- About Us Section end-->
 
     <!-- Brading Section start -->
-    <section class="partners" aria-labelledby="partners-title">
+    <section class="partners">
         <div class="container">
             <h2 id="partners-title" class="partners__title">Previously worked with</h2>
 
@@ -310,7 +287,7 @@
     <!-- Brading Section end -->
 
     <!-- Project section start -->
-    <section class="projects" aria-labelledby="projects-title">
+    <section class="projects">
         <div class="container">
             <div class="projects__header">
                 <h2 id="projects-title" class="projects__title">My projects</h2>
@@ -614,72 +591,64 @@
                 </article>
                 <!-- Right: Social grid -->
                 <div class="social-grid">
-
-                <a class="soc-card" href="https://dribbble.com/abdullahnoman" target="_blank" rel="noopener">
-                    <p class="soc-card__eyebrow">Explorations</p>
-                    <div class="soc-card__row">
-                        <i class="fa-brands fa-dribbble"></i>
-                        <span class="soc-card__label">Dribbble</span>
-                    </div>
-                </a>
-
-                <a class="soc-card" href="https://www.behance.net/abdullahnoman" target="_blank" rel="noopener">
-                    <p class="soc-card__eyebrow">Other Case Studies</p>
-                    <div class="soc-card__row">
-                        <i class="fa-brands fa-behance"></i>
-                        <span class="soc-card__label">Behance</span>
-                    </div>
-                </a>
-
-                <a class="soc-card" href="https://www.instagram.com/noman.design" target="_blank" rel="noopener">
-                    <p class="soc-card__eyebrow">Follow</p>
-                    <div class="soc-card__row">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span class="soc-card__label">Instagram</span>
-                    </div>
-                </a>
-
-                <a class="soc-card" href="https://www.linkedin.com/in/abdullahnomaan/" target="_blank" rel="noopener">
-                    <p class="soc-card__eyebrow">Connect</p>
-                    <div class="soc-card__row">
-                        <i class="fa-brands fa-linkedin"></i>
-                        <span class="soc-card__label">LinkedIn</span>
-                    </div>
-                </a>
-
-                <a class="soc-card" href="https://www.youtube.com/@AbdullahNoman" target="_blank" rel="noopener">
-                    <p class="soc-card__eyebrow">Subscribe</p>
-                    <div class="soc-card__row">
-                        <i class="fa-brands fa-youtube"></i>
-                        <span class="soc-card__label">YouTube</span>
-                    </div>
-                </a>
-
-                <a class="soc-card" href="https://x.com/noman_design" target="_blank" rel="noopener">
-                    <p class="soc-card__eyebrow">Follow</p>
-                    <div class="soc-card__row">
-                        <i class="fa-brands fa-twitter"></i>
-                        <span class="soc-card__label">Twitter / X</span>
-                    </div>
-                </a>
-
-                <!-- Email block (spans 2 cols on desktop) -->
-                <div class="soc-card soc-card--email">
-                    <p class="soc-card__eyebrow">Or, feel free to send a mail</p>
-                    <div class="soc-card__row soc-card__row--email">
-                        <i class="fa-solid fa-inbox"></i>
-                        <div class="soc-card_mail-button">
-                            <a class="soc-card__email" href="mailto:workwithnoman@gmail.com">workwithnoman@gmail.com</a>
-                            <button class="soc-card__copy"
-                                    type="button"
-                                    aria-label="Copy email"
-                                    data-email="user@example.com">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
+                    <a class="soc-card" href="https://dribbble.com/abdullahnoman" target="_blank" rel="noopener">
+                        <p class="soc-card__eyebrow">Explorations</p>
+                        <div class="soc-card__row">
+                            <i class="fa-brands fa-dribbble"></i>
+                            <span class="soc-card__label">Dribbble</span>
+                        </div>
+                    </a>
+                    <a class="soc-card" href="https://www.behance.net/abdullahnoman" target="_blank" rel="noopener">
+                        <p class="soc-card__eyebrow">Other Case Studies</p>
+                        <div class="soc-card__row">
+                            <i class="fa-brands fa-behance"></i>
+                            <span class="soc-card__label">Behance</span>
+                        </div>
+                    </a>
+                    <a class="soc-card" href="https://www.instagram.com/noman.design" target="_blank" rel="noopener">
+                        <p class="soc-card__eyebrow">Follow</p>
+                        <div class="soc-card__row">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span class="soc-card__label">Instagram</span>
+                        </div>
+                    </a>
+                    <a class="soc-card" href="https://www.linkedin.com/in/abdullahnomaan/" target="_blank" rel="noopener">
+                        <p class="soc-card__eyebrow">Connect</p>
+                        <div class="soc-card__row">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span class="soc-card__label">LinkedIn</span>
+                        </div>
+                    </a>
+                    <a class="soc-card" href="https://www.youtube.com/@AbdullahNoman" target="_blank" rel="noopener">
+                        <p class="soc-card__eyebrow">Subscribe</p>
+                        <div class="soc-card__row">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span class="soc-card__label">YouTube</span>
+                        </div>
+                    </a>
+                    <a class="soc-card" href="https://x.com/noman_design" target="_blank" rel="noopener">
+                        <p class="soc-card__eyebrow">Follow</p>
+                        <div class="soc-card__row">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span class="soc-card__label">Twitter / X</span>
+                        </div>
+                    </a>
+                    <!-- Email block (spans 2 cols on desktop) -->
+                    <div class="soc-card soc-card--email">
+                        <p class="soc-card__eyebrow">Or, feel free to send a mail</p>
+                        <div class="soc-card__row soc-card__row--email">
+                            <i class="fa-solid fa-inbox"></i>
+                            <div class="soc-card_mail-button">
+                                <a class="soc-card__email" href="mailto:workwithnoman@gmail.com">workwithnoman@gmail.com</a>
+                                <button class="soc-card__copy"
+                                        type="button"
+                                        aria-label="Copy email"
+                                        data-email="user@example.com">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
                 </div>
                 <!-- Footer meta row -->
                 <footer class="contact-cta__footer">
@@ -694,13 +663,23 @@
         </div>
     </div>
      
-
+</div>
+</div>
 
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script> 
+
+    <script src="assets/js/wow.js"></script> 
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

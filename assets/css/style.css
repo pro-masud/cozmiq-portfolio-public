@@ -3730,7 +3730,7 @@ textarea {
 .social-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 15px;
 }
 .social-grid .soc-card {
   border: 1px solid rgba(255, 255, 255, 0.08);

@@ -1,5 +1,32 @@
 (function($) {
     $(document).ready(function() {
+        // wow js 
+        new WOW({
+            boxClass: 'wow',
+            animateClass: 'animate__animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        }).init();
+
+        // gasp scrolling animations
+        if($('#smooth-wrapper').length && $('#smooth-content').length){
+            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TweenMax, ScrollToPlugin);
+        
+            gsap.config({
+                nullTargetWarn: false,
+            });
+        
+            let smoother = ScrollSmoother.create({
+                smooth: 2,
+                effects: true,
+                smoothTouch: 0.1,
+                normalizeScroll: false,
+                ignoreMobileResize: true,
+            });
+
+        }
+
 
         // Smooth, continuous, “infinite” marquee feel
         const swiper = new Swiper('#portfolioSwiper', {
