@@ -147,6 +147,13 @@ body {
 	line-height: 26px;
 }
 
+html { scroll-behavior: auto !important; }
+html.lenis { height: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+
 a{
 	text-decoration: none;
 }

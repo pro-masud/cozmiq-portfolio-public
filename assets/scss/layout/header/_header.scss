@@ -1,6 +1,5 @@
 @use '../../utils' as *;
 
-
 .cozmiq-header {
   position: sticky;
   top: 0;
@@ -22,6 +21,18 @@
     gap: 12px;
     justify-content: space-between;
     margin: 0 auto;
+
+  backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+
+  background:
+    linear-gradient(135deg,
+      rgba(var(--gals-color), .18),
+      rgba(255,255,255,.06));
+  border-bottom: 1px solid rgba(var(--gals-color), .35);
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.06);
   }
 }
 
@@ -164,10 +175,11 @@
     display: inline-block;
     padding: 8px 10px;
     font-size: 15px;
-    color: var(--muted);
+    color: var(--menu-color);
     text-decoration: none;
     border-radius: 8px;
     transition: color .2s ease, background-color .2s ease;
+    font-family: var(--cq-portfolio-fonts-muli);
 
     &:hover { color: var(--text); background: rgba(17,19,24,0.04); }
     &.is-active { color: var(--text); }
@@ -240,4 +252,24 @@
             }
         }
     }
+}
+
+
+/* Fallback: browsers without backdrop-filter */
+@supports not ((backdrop-filter: blur(1px))){
+  .glass-header{
+    background: rgba(var(--gals-color), .85);
+  }
+}
+
+/* Optional: auto-tune for dark/light */
+@media (prefers-color-scheme: light){
+  .glass-header{
+    color:#0f172a;
+    background:
+      linear-gradient(135deg,
+        rgba(var(--muted), .2),
+        rgba(255,255,255,.45));
+    border-bottom: 1px solid rgba(var(--muted), .25);
+  }
 }

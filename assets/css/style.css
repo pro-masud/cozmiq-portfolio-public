@@ -133,6 +133,8 @@
   --muted: #80838a;
   --brand-icon-bg: #111318;
   --brand-icon-fg: #ffffff;
+  --menu-color: #8a8a8a;
+  --gals-color: #FDD756;
   --singe-color: #F5A445;
   --radius: 16px;
   --radius-lg: 22px;
@@ -159,6 +161,26 @@ body {
   font-weight: normal;
   color: var(--cq-portfolio-black);
   line-height: 26px;
+}
+
+html {
+  scroll-behavior: auto !important;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 a {
@@ -3896,6 +3918,11 @@ textarea {
   gap: 12px;
   justify-content: space-between;
   margin: 0 auto;
+  backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+  background: linear-gradient(135deg, rgba(var(--gals-color), 0.18), rgba(255, 255, 255, 0.06));
+  border-bottom: 1px solid rgba(var(--gals-color), 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 /* Brand (left side) */
@@ -4022,10 +4049,11 @@ textarea {
   display: inline-block;
   padding: 8px 10px;
   font-size: 15px;
-  color: var(--muted);
+  color: var(--menu-color);
   text-decoration: none;
   border-radius: 8px;
   transition: color 0.2s ease, background-color 0.2s ease;
+  font-family: var(--cq-portfolio-fonts-muli);
 }
 .primary-nav .nav-link:hover {
   color: var(--text);
@@ -4101,9 +4129,23 @@ textarea {
   transform: scale(0.95);
 }
 
+/* Fallback: browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-header {
+    background: rgba(var(--gals-color), 0.85);
+  }
+}
+/* Optional: auto-tune for dark/light */
+@media (prefers-color-scheme: light) {
+  .glass-header {
+    color: #0f172a;
+    background: linear-gradient(135deg, rgba(var(--muted), 0.2), rgba(255, 255, 255, 0.45));
+    border-bottom: 1px solid rgba(var(--muted), 0.25);
+  }
+}
 .about-hero {
   background: var(--bg);
-  padding: clamp(48px, 8vw, 96px) 20px;
+  padding: 60px 20px 120px;
 }
 .about-hero__wrap {
   max-width: 1200px;
