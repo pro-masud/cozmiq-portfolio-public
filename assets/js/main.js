@@ -1,6 +1,5 @@
 (function($) {
     $(document).ready(function() {
-        // wow js 
         new WOW({
             boxClass: 'wow',
             animateClass: 'animate__animated',
@@ -9,7 +8,6 @@
             live: true
         }).init();
 
-        // gasp scrolling animations
         if($('#smooth-wrapper').length && $('#smooth-content').length){
             gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TweenMax, ScrollToPlugin);
         
@@ -27,12 +25,11 @@
 
         }
 
-
-        // Smooth, continuous, “infinite” marquee feel
+        // Portfolio Slider
         const swiper = new Swiper('#portfolioSwiper', {
             loop: true,                      
             slidesPerView: 3,          
-            spaceBetween: '30px',
+            spaceBetween: 30,
             freeMode: {
                 enabled: true,
                 momentum: false,             
@@ -43,6 +40,11 @@
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true
             },
+             breakpoints: {
+                0: { slidesPerView: 1, },
+                768:{ slidesPerView: 2, spaceBetween: 16 },
+                992:{ slidesPerView: 3, spaceBetween: 16 },
+            },
         });
 
         swiper.on('touchEnd', () => {
@@ -50,7 +52,6 @@
             swiper.autoplay.start();
         });
 
-        // Smooth, continuous, “infinite” marquee feel
         var recendProject = new Swiper(".Recent-work-slider", {
             slidesPerView: 2,
             spaceBetween: 30,
@@ -61,13 +62,11 @@
             },
         });
 
-        // Copy Button Mail
         $(document).on("click", ".soc-card__copy", async function () {
             const $btn  = $(this);
             const $icon = $btn.find("i");
             const email = $btn.data("email");
 
-            // সাময়িক UI ফিডব্যাক
             const prevAria  = $btn.attr("aria-label") || "Copy email";
             const prevClass = $icon.attr("class");
             $btn.prop("disabled", true);
@@ -88,6 +87,46 @@
                 }, 1200);
             }
         });
+
+        if (!window.__lenis) {
+        window.__lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            smoothWheel: true,
+            smoothTouch: false,
+            wheelMultiplier: 1.0,
+            touchMultiplier: 1.4
+        });
+        }
+        const lenis = window.__lenis;
+
+        if (!window.__lenisRAF) {
+            window.__lenisRAF = true;
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+
+        const HEADER_OFFSET = (function () {
+        const $h = $('.cozmiq-header');
+        return $h.length ? $h.outerHeight() : 80;
+        })();
+
+        $('a[href^="#"]')
+        .off('click.lenis') 
+        .on('click.lenis', function (e) {
+            const id = $(this).attr('href');
+            if (!id || id === '#') return; 
+            const $target = $(id);
+            if ($target.length) {
+            e.preventDefault();
+            lenis.scrollTo($target[0], { offset: -HEADER_OFFSET });
+            }
+        });
+
+        $('.swiper, .swiper-container').attr('data-lenis-prevent', '');
 
     });
 })(jQuery);

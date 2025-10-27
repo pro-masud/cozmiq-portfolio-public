@@ -10,7 +10,8 @@
   justify-content: center;
 
   .header-pill {
-    max-width: 700px;
+    max-width: 780px;
+    width: 100%;
     background: var(--surface);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
@@ -22,20 +23,70 @@
     justify-content: space-between;
     margin: 0 auto;
 
-  backdrop-filter: blur(14px) saturate(140%) contrast(105%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+    backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%) contrast(105%);
+    background: linear-gradient(135deg, rgba(var(--gals-color), .18), rgba(255,255,255,.06));
+    border-bottom: 1px solid rgba(var(--gals-color), .35);
+    box-shadow: 0 8px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
 
-  background:
-    linear-gradient(135deg,
-      rgba(var(--gals-color), .18),
-      rgba(255,255,255,.06));
-  border-bottom: 1px solid rgba(var(--gals-color), .35);
-  box-shadow:
-    0 8px 30px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.06);
+    & .header-pill-left{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: start;
+    }
+    & .header-user-img{
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      padding: 3px;
+       border-radius: 50%;
+      box-shadow: 0 8px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.06);
+      background-color: transparent;
+       & img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+       }
+    }
+
+    .header-pill-right{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      & .cozmiq-bar{
+        & .cozmiq-icon-bar{
+          padding: 10px 15px;
+          background: var(--brand-icon-bg);
+          border-radius: 6px;
+          display: none;
+           
+          & i{
+            font-size: 20px;
+            color: var(--brand-icon-fg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          @media #{$md, $sm, $xs}{
+            display: block;
+            .primary-nav { 
+              display: none;
+            } 
+          }
+        }
+       }
+    }
   }
 }
 
+@media #{$md, $sm, $xs}{
+  .primary-nav { 
+    display: none;
+  } 
+}
 /* Brand (left side) */
 .brand {
   display: inline-flex;
@@ -171,7 +222,7 @@
     margin: 0;
   }
 
-  .nav-link {
+  a{
     display: inline-block;
     padding: 8px 10px;
     font-size: 15px;
@@ -221,7 +272,7 @@
 
 /* responsive rules */
 @media (max-width: 900px) {
-  .primary-nav { display: none; }     /* hide inline nav on small screens */
+      /* hide inline nav on small screens */
   .menu-btn { display: inline-grid; } /* use hamburger */
 }
 
