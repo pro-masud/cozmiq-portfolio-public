@@ -34,5 +34,33 @@
             },
         });
 
+        // Copy Button Mail
+        $(document).on("click", ".soc-card__copy", async function () {
+            const $btn  = $(this);
+            const $icon = $btn.find("i");
+            const email = $btn.data("email");
+
+            // সাময়িক UI ফিডব্যাক
+            const prevAria  = $btn.attr("aria-label") || "Copy email";
+            const prevClass = $icon.attr("class");
+            $btn.prop("disabled", true);
+
+            try {
+                await navigator.clipboard.writeText(email);
+                $btn.attr("aria-label", "Copied!");
+                $icon.attr("class", "fa-solid fa-check");
+            } catch (e) {
+                console.error(e);
+                $btn.attr("aria-label", "Copy failed");
+                $icon.attr("class", "fa-solid fa-triangle-exclamation");
+            } finally {
+                setTimeout(() => {
+                $btn.attr("aria-label", prevAria);
+                $icon.attr("class", prevClass);
+                $btn.prop("disabled", false);
+                }, 1200);
+            }
+        });
+
     });
 })(jQuery);
