@@ -1,0 +1,39 @@
+@use '../../utils' as *;
+
+.calendar{
+
+  @media #{$xs}{
+    padding:  60px  0px;
+  }
+
+  & .calendar__header{
+    & h2{
+      font-size: 64px;
+      text-align: center;
+      color: var(--brand-icon-bg);
+      font-weight: 500;
+      line-height: 71px;
+      font-family: var(--cq-portfolio-fonts-muli);
+
+      @media #{$sm, $xs}{
+           font-size: 45px;
+           line-height: 54px;
+        }
+    }
+  }
+
+    .calendar__grid {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        border-radius: var(--radius-lg);
+        padding: clamp(12px, 2vw, 20px);
+
+        & .cal-embed{
+            & span{
+                display: none;
+            }
+        }
+    }
+
+}

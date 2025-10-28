@@ -5577,4 +5577,34 @@ textarea {
   max-width: 1360px;
 }
 
+@media (max-width: 575px) {
+  .calendar {
+    padding: 60px 0px;
+  }
+}
+.calendar .calendar__header h2 {
+  font-size: 64px;
+  text-align: center;
+  color: var(--brand-icon-bg);
+  font-weight: 500;
+  line-height: 71px;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .calendar .calendar__header h2 {
+    font-size: 45px;
+    line-height: 54px;
+  }
+}
+.calendar .calendar__grid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
+  padding: clamp(12px, 2vw, 20px);
+}
+.calendar .calendar__grid .cal-embed span {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

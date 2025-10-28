@@ -108,64 +108,70 @@
         }
 
 
-    // offcanvas creation
-    const $bar = $('.cozmiq-bar');
-    const $panel = $('#cozmiq-offcanvas');
-    const $overlay = $('.cozmiq-overlay');
-    const $closeBtn = $('.offcanvas-close');
+        // offcanvas creation
+        const $bar = $('.cozmiq-bar');
+        const $panel = $('#cozmiq-offcanvas');
+        const $overlay = $('.cozmiq-overlay');
+        const $closeBtn = $('.offcanvas-close');
 
-    function openPanel(){
-        $panel.addClass('is-open').attr('aria-hidden', 'false');
-        $bar.attr('aria-expanded', 'true');
-        $overlay.addClass('is-active').removeAttr('hidden');
-        $('body').addClass('no-scroll');
-        // ফোকাস ম্যানেজমেন্ট
-        setTimeout(() => $closeBtn.trigger('focus'), 100);
-    }
-
-    function closePanel(){
-        $panel.removeClass('is-open').attr('aria-hidden', 'true');
-        $bar.attr('aria-expanded', 'false');
-        $overlay.removeClass('is-active').attr('hidden', true);
-        $('body').removeClass('no-scroll');
-        $bar.trigger('focus');
-    }
-
-    // Open on click or Enter/Space
-    $bar.on('click', openPanel);
-    $bar.on('keydown', function(e){
-        if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openPanel();
+        function openPanel(){
+            $panel.addClass('is-open').attr('aria-hidden', 'false');
+            $bar.attr('aria-expanded', 'true');
+            $overlay.addClass('is-active').removeAttr('hidden');
+            $('body').addClass('no-scroll');
+            // ফোকাস ম্যানেজমেন্ট
+            setTimeout(() => $closeBtn.trigger('focus'), 100);
         }
-    });
 
-    // Close actions
-    $closeBtn.on('click', closePanel);
-    $overlay.on('click', closePanel);
-    $(document).on('keydown', function(e){
-        if (e.key === 'Escape' && $panel.hasClass('is-open')) {
-        closePanel();
+        function closePanel(){
+            $panel.removeClass('is-open').attr('aria-hidden', 'true');
+            $bar.attr('aria-expanded', 'false');
+            $overlay.removeClass('is-active').attr('hidden', true);
+            $('body').removeClass('no-scroll');
+            $bar.trigger('focus');
         }
-    });
 
-    // Simple focus trap inside panel when open
-    $panel.on('keydown', function(e){
-        if (e.key !== 'Tab') return;
-        const $focusable = $panel
-        .find('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])')
-        .filter(':visible');
-        if (!$focusable.length) return;
+        // Open on click or Enter/Space
+        $bar.on('click', openPanel);
+        $bar.on('keydown', function(e){
+            if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPanel();
+            }
+        });
 
-        const first = $focusable[0];
-        const last  = $focusable[$focusable.length - 1];
+        // Close actions
+        $closeBtn.on('click', closePanel);
+        $overlay.on('click', closePanel);
+        $(document).on('keydown', function(e){
+            if (e.key === 'Escape' && $panel.hasClass('is-open')) {
+            closePanel();
+            }
+        });
 
-        if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault(); $(last).focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault(); $(first).focus();
-        }
-    });
+        // Simple focus trap inside panel when open
+        $panel.on('keydown', function(e){
+            if (e.key !== 'Tab') return;
+            const $focusable = $panel
+            .find('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])')
+            .filter(':visible');
+            if (!$focusable.length) return;
+
+            const first = $focusable[0];
+            const last  = $focusable[$focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault(); $(last).focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault(); $(first).focus();
+            }
+        });
+
+
+    // Project Card 
+
+
+    
 
     });
 })(jQuery);
