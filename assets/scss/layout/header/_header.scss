@@ -55,17 +55,21 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      @media #{$md, $sm, $xs}{
+         gap: 5px;
+      }
 
       & .cozmiq-bar{
+        cursor: pointer;
+        
         & .cozmiq-icon-bar{
           padding: 10px 15px;
-          background: var(--brand-icon-bg);
           border-radius: 6px;
           display: none;
            
           & i{
             font-size: 20px;
-            color: var(--brand-icon-fg);
+            color: var(--brand-icon-bg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -324,3 +328,84 @@
     border-bottom: 1px solid rgba(var(--muted), .25);
   }
 }
+
+.hero-btn{
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  @media #{$lg, $md, $sm, $xs}{
+     margin-bottom: 20px;
+  }
+  @media #{$xs}{
+    flex-wrap: wrap;
+  }
+
+  & a{
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 18px;
+    color: var(--text);
+    font-family: var(--cq-portfolio-fonts-muli);
+    border-bottom: 1px solid var(--brand-icon-bg);
+
+    @media #{$xs}{
+      display: inline-block;
+    }
+
+    & svg{
+      transform: rotate(-45deg);
+      transition: .4s;
+    }
+    &:hover{
+     & svg{
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+ /* Overlay */
+    .cozmiq-overlay{
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.45);
+      opacity: 0; visibility: hidden;
+      transition: opacity .28s ease;
+      z-index: 1000;
+    }
+    .cozmiq-overlay.is-active{ opacity: 1; visibility: visible; }
+
+    /* Offcanvas panel */
+    .cozmiq-offcanvas{
+      position: fixed; top: 0; left: 0;
+      height: 100vh; width: 320px; max-width: 92vw;
+      background: #fff; color: #111;
+      box-shadow: 8px 0 30px rgba(0,0,0,.15);
+      transform: translateX(-100%);
+      transition: transform .28s ease;
+      z-index: 1001;
+      display: flex; flex-direction: column;
+    }
+    .cozmiq-offcanvas.is-open{ transform: translateX(0); }
+
+    .offcanvas-head{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 16px; border-bottom: 1px solid #eee;
+    }
+    .offcanvas-title{ font-size: 18px; font-weight: 600; }
+    .offcanvas-close{
+      border: 0; background: transparent; font-size: 24px; line-height: 1;
+      width: 36px; height: 36px; border-radius: 8px; cursor: pointer;
+    }
+    .offcanvas-close:focus{ outline: 2px solid #4f46e5; outline-offset: 2px; }
+
+    .offcanvas-body{ padding: 14px 16px 24px; overflow: auto; }
+    .offcanvas-nav a{
+      display: block; padding: 10px 12px; border-radius: 10px; text-decoration: none; color: #111;
+    }
+    .offcanvas-nav a:hover{ background: #f4f4f5; }

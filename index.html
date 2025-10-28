@@ -13,8 +13,27 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- <div id="smooth-wrapper">
-<div id="smooth-content"> -->
+
+    <!-- Offcanvas -->
+    <aside class="cozmiq-offcanvas" id="cozmiq-offcanvas" aria-hidden="true">
+        <div class="offcanvas-head">
+            <div class="offcanvas-title">Offcanvas Menu</div>
+            <button class="offcanvas-close" aria-label="বন্ধ করুন">&times;</button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="offcanvas-nav">
+                <a href="#home"   class="nav-link">Home</a>
+                <a href="#about"  class="nav-link">About</a>
+                <a href="#work"   class="nav-link">Work</a>
+                <a href="#projects"   class="nav-link">Projects</a>
+                <a href="#blog"   class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="cozmiq-overlay" hidden></div>
+
     <!-- Header -->
     <header class="cozmiq-header">
         <div class="container">
@@ -37,11 +56,11 @@
                     </nav>
                 </div>
                 <div class="header-pill-right">
-                    <div class="cozmiq-bar">
-                        <span class="cozmiq-icon-bar"><i class="fa-solid fa-bars-staggered"></i></span>
-                    </div>
                     <div class="header-user-img">
                         <a href="#"><img src="./assets/images/user.png" alt=""></a>
+                    </div>
+                    <div class="cozmiq-bar" role="button" aria-controls="cozmiq-offcanvas" aria-expanded="false" aria-label="মেনু খুলুন" tabindex="0">
+                        <span class="cozmiq-icon-bar"><i class="fa-solid fa-bars-staggered"></i></span>
                     </div>
                 </div>
             </div>
@@ -57,6 +76,10 @@
                     <p class="eyebrow wow animate__animated animate__fadeInDown" data-wow-delay="0.1s" data-wow-duration="600ms" data-wow-offset="80">Hi, I’m <span class="nowrap">John Carter</span></p>
                     <h1 class="about-hero__title wow animate__animated animate__fadeInUp" data-wow-delay="0.2s" data-wow-duration="800ms" data-wow-offset="80"><span class="wave" aria-hidden="true"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.25s" data-wow-duration="700ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667de2707b73866eb2d19763_high-five-icon-portfolix-x-webflow-template.png" alt=""></span>Product <br />Designer from <br /><span class="nowrap">New York</span></h1>
                     <p class="about-hero__desc wow animate__animated animate__fadeInUp" data-wow-delay="0.35s" data-wow-duration="700ms" data-wow-offset="80">Lorem ipsum dolor sit amet consectetur justo eget molestie nunc etiam montes a netus at nisl pellentesque vel nunc urna felis bibendum donec cras <span class="nowrap">viverra viverra.</span></p>
+                    <div class="hero-btn">
+                        <a class="wow animate__animated animate__fadeInUp" data-wow-delay="0.4s" data-wow-duration="700ms" data-wow-offset="80" href="#"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Here me</a>
+                        <a class="wow animate__animated animate__fadeInUp" data-wow-delay="0.5s" data-wow-duration="700ms" data-wow-offset="80" href="#"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Book a Apptement</a>
+                    </div>
                 </div>
 
                 <div class="about-hero__visual">
@@ -294,46 +317,46 @@
     <section class="services">
         <div class="container">
             <div class="services__header">
-            <h2 class="services__title wow animate__animated animate__fadeInUp" data-wow-delay="0.10s" data-wow-duration="700ms" data-wow-offset="80">Explore <span class="services__title-highlight">my services</span></h2>
+                <h2 class="services__title wow animate__animated animate__fadeInUp" data-wow-delay="0.10s" data-wow-duration="700ms" data-wow-offset="80">Explore <span class="services__title-highlight">my services</span></h2>
             </div>
 
             <div class="services__grid">
             <a href="/services-pages/services" class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.18s" data-wow-duration="700ms" data-wow-offset="80">
                 <div class="service-card__top">
-                <h3 class="service-card__title wow animate__animated animate__fadeInUp" data-wow-delay="0.22s" data-wow-duration="650ms" data-wow-offset="80">Design</h3>
-                <div class="service-card__icon"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.26s" data-wow-duration="650ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667f245c007464021157499c_design-icon-portfolix-x-webflow-template.png" alt="Design Icon"></div>
+                    <h3 class="service-card__title wow animate__animated animate__fadeInUp" data-wow-delay="0.22s" data-wow-duration="650ms" data-wow-offset="80">Design</h3>
+                    <div class="service-card__icon"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.26s" data-wow-duration="650ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667f245c007464021157499c_design-icon-portfolix-x-webflow-template.png" alt="Design Icon"></div>
                 </div>
                 <ul class="service-card__list">
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.30s" data-wow-duration="600ms" data-wow-offset="80">Web design</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.36s" data-wow-duration="600ms" data-wow-offset="80">Graphic design</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.42s" data-wow-duration="600ms" data-wow-offset="80">Brand design</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.48s" data-wow-duration="600ms" data-wow-offset="80">App design</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.30s" data-wow-duration="600ms" data-wow-offset="80">Web design</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.36s" data-wow-duration="600ms" data-wow-offset="80">Graphic design</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.42s" data-wow-duration="600ms" data-wow-offset="80">Brand design</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.48s" data-wow-duration="600ms" data-wow-offset="80">App design</li>
                 </ul>
             </a>
 
             <a href="/services-pages/services" class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.34s" data-wow-duration="700ms" data-wow-offset="80">
                 <div class="service-card__top">
-                <h3 class="service-card__title wow animate__animated animate__fadeInUp" data-wow-delay="0.38s" data-wow-duration="650ms" data-wow-offset="80">Development</h3>
-                <div class="service-card__icon"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.42s" data-wow-duration="650ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667f245c5d930d6898b75de6_development-icon-portfolix-x-webflow-template.png" alt="Development Icon"></div>
+                    <h3 class="service-card__title wow animate__animated animate__fadeInUp" data-wow-delay="0.38s" data-wow-duration="650ms" data-wow-offset="80">Development</h3>
+                    <div class="service-card__icon"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.42s" data-wow-duration="650ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667f245c5d930d6898b75de6_development-icon-portfolix-x-webflow-template.png" alt="Development Icon"></div>
                 </div>
                 <ul class="service-card__list">
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.46s" data-wow-duration="600ms" data-wow-offset="80">HTML / CSS / Webflow</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.52s" data-wow-duration="600ms" data-wow-offset="80">Webflow development</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.58s" data-wow-duration="600ms" data-wow-offset="80">Custom development</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.64s" data-wow-duration="600ms" data-wow-offset="80">APIs and integrations</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.46s" data-wow-duration="600ms" data-wow-offset="80">HTML / CSS / Webflow</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.52s" data-wow-duration="600ms" data-wow-offset="80">Webflow development</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.58s" data-wow-duration="600ms" data-wow-offset="80">Custom development</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.64s" data-wow-duration="600ms" data-wow-offset="80">APIs and integrations</li>
                 </ul>
             </a>
 
             <a href="/services-pages/services" class="service-card wow animate__animated animate__fadeInUp" data-wow-delay="0.50s" data-wow-duration="700ms" data-wow-offset="80">
                 <div class="service-card__top">
-                <h3 class="service-card__title wow animate__animated animate__fadeInUp" data-wow-delay="0.54s" data-wow-duration="650ms" data-wow-offset="80">Research</h3>
-                <div class="service-card__icon"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.58s" data-wow-duration="650ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667f245d1fe170523dce34c5_research-icon-portfolix-x-webflow-template.png" alt="Research Icon"></div>
+                    <h3 class="service-card__title wow animate__animated animate__fadeInUp" data-wow-delay="0.54s" data-wow-duration="650ms" data-wow-offset="80">Research</h3>
+                    <div class="service-card__icon"><img class="wow animate__animated animate__zoomIn" data-wow-delay="0.58s" data-wow-duration="650ms" data-wow-offset="80" src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667f245d1fe170523dce34c5_research-icon-portfolix-x-webflow-template.png" alt="Research Icon"></div>
                 </div>
                 <ul class="service-card__list">
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.62s" data-wow-duration="600ms" data-wow-offset="80">Market research</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.68s" data-wow-duration="600ms" data-wow-offset="80">Brand evolution</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.74s" data-wow-duration="600ms" data-wow-offset="80">Competitors analysis</li>
-                <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.80s" data-wow-duration="600ms" data-wow-offset="80">AI consultation</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.62s" data-wow-duration="600ms" data-wow-offset="80">Market research</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.68s" data-wow-duration="600ms" data-wow-offset="80">Brand evolution</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.74s" data-wow-duration="600ms" data-wow-offset="80">Competitors analysis</li>
+                    <li class="wow animate__animated animate__fadeInUp" data-wow-delay="0.80s" data-wow-duration="600ms" data-wow-offset="80">AI consultation</li>
                 </ul>
             </a>
             </div>
@@ -425,7 +448,7 @@
     <!-- Recent Work Section End -->
 
 
-    <div class="contact-cta" aria-label="Contact & social">
+    <div class="contact-cta">
         <div class="container">
             <div class="contact-cta__wrap">
                 <article class="intro-card">

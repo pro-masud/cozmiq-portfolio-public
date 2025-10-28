@@ -86,6 +86,11 @@
     margin: 0;
     color: #fff;
     font-weight: 400;
+
+    @media #{$sm, $xs}{
+        font-size: 36px;
+        margin-top: 6px;
+    }
   }
   &__sub{
     margin: 2px 0 0;
@@ -233,6 +238,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media #{$lg, $md, $sm, $xs}{
+      flex-direction: column;
+      align-items: start;
+    }
 
     & .btn{
         display:inline-flex;
