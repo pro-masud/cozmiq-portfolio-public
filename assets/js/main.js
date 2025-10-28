@@ -8,23 +8,6 @@
             live: true
         }).init();
 
-        if($('#smooth-wrapper').length && $('#smooth-content').length){
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TweenMax, ScrollToPlugin);
-        
-            gsap.config({
-                nullTargetWarn: false,
-            });
-        
-            let smoother = ScrollSmoother.create({
-                smooth: 2,
-                effects: true,
-                smoothTouch: 0.1,
-                normalizeScroll: false,
-                ignoreMobileResize: true,
-            });
-
-        }
-
         // Portfolio Slider
         const swiper = new Swiper('#portfolioSwiper', {
             loop: true,                      
@@ -92,106 +75,97 @@
             }
         });
 
-        if (!window.__lenis) {
-        window.__lenis = new Lenis({
+        // Smoth Scrolling 
+        const lenis = new Lenis({
             duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
-            smoothTouch: false,
-            wheelMultiplier: 1.0,
-            touchMultiplier: 1.4
+            smoothTouch: false
         });
-        }
-        const lenis = window.__lenis;
 
-        if (!window.__lenisRAF) {
-            window.__lenisRAF = true;
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
+        function raf(time) {
+            lenis.raf(time);
             requestAnimationFrame(raf);
         }
+        requestAnimationFrame(raf);
 
-        const HEADER_OFFSET = (function () {
-        const $h = $('.cozmiq-header');
-        return $h.length ? $h.outerHeight() : 80;
-        })();
-
-        $('a[href^="#"]')
-        .off('click.lenis') 
-        .on('click.lenis', function (e) {
-            const id = $(this).attr('href');
-            if (!id || id === '#') return; 
-            const $target = $(id);
-            if ($target.length) {
-            e.preventDefault();
-            lenis.scrollTo($target[0], { offset: -HEADER_OFFSET });
+        $(function () {
+            $('a[href^="#"]').on('click', function (e) {
+            const hash = this.getAttribute('href');
+            if (hash && hash.length > 1 && document.querySelector(hash)) {
+                e.preventDefault();
+                lenis.scrollTo(hash, {
+                offset: -72, 
+                duration: 1.2,
+            });
+            history.pushState(null, '', hash);
             }
+            });
         });
 
-        $('.swiper, .swiper-container').attr('data-lenis-prevent', '');
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            try { lenis.destroy(); } catch(e){}
+        }
 
 
-        // offcanvas creation
+    // offcanvas creation
+    const $bar = $('.cozmiq-bar');
+    const $panel = $('#cozmiq-offcanvas');
+    const $overlay = $('.cozmiq-overlay');
+    const $closeBtn = $('.offcanvas-close');
 
-        const $bar = $('.cozmiq-bar');
-      const $panel = $('#cozmiq-offcanvas');
-      const $overlay = $('.cozmiq-overlay');
-      const $closeBtn = $('.offcanvas-close');
-
-      function openPanel(){
+    function openPanel(){
         $panel.addClass('is-open').attr('aria-hidden', 'false');
         $bar.attr('aria-expanded', 'true');
         $overlay.addClass('is-active').removeAttr('hidden');
         $('body').addClass('no-scroll');
         // ফোকাস ম্যানেজমেন্ট
         setTimeout(() => $closeBtn.trigger('focus'), 100);
-      }
+    }
 
-      function closePanel(){
+    function closePanel(){
         $panel.removeClass('is-open').attr('aria-hidden', 'true');
         $bar.attr('aria-expanded', 'false');
         $overlay.removeClass('is-active').attr('hidden', true);
         $('body').removeClass('no-scroll');
         $bar.trigger('focus');
-      }
+    }
 
-      // Open on click or Enter/Space
-      $bar.on('click', openPanel);
-      $bar.on('keydown', function(e){
+    // Open on click or Enter/Space
+    $bar.on('click', openPanel);
+    $bar.on('keydown', function(e){
         if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openPanel();
+        e.preventDefault();
+        openPanel();
         }
-      });
+    });
 
-      // Close actions
-      $closeBtn.on('click', closePanel);
-      $overlay.on('click', closePanel);
-      $(document).on('keydown', function(e){
+    // Close actions
+    $closeBtn.on('click', closePanel);
+    $overlay.on('click', closePanel);
+    $(document).on('keydown', function(e){
         if (e.key === 'Escape' && $panel.hasClass('is-open')) {
-          closePanel();
+        closePanel();
         }
-      });
+    });
 
-      // Simple focus trap inside panel when open
-      $panel.on('keydown', function(e){
+    // Simple focus trap inside panel when open
+    $panel.on('keydown', function(e){
         if (e.key !== 'Tab') return;
         const $focusable = $panel
-          .find('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])')
-          .filter(':visible');
+        .find('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])')
+        .filter(':visible');
         if (!$focusable.length) return;
 
         const first = $focusable[0];
         const last  = $focusable[$focusable.length - 1];
 
         if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault(); $(last).focus();
+        e.preventDefault(); $(last).focus();
         } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault(); $(first).focus();
+        e.preventDefault(); $(first).focus();
         }
-      });
+    });
 
     });
 })(jQuery);

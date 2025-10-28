@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-----------------------------------------------------------------------------------
 
     Template Name: Example HTML Template
@@ -163,24 +164,16 @@ body {
   line-height: 26px;
 }
 
+/* Lenis থাকলে native smooth বন্ধ রাখো */
 html {
   scroll-behavior: auto !important;
 }
 
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+/* (ঐচ্ছিক) fixed/sticky header কে আলাদা লেয়ারে দাও—ফ্লিকার কমে */
+.cozmiq-header {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 a {
@@ -3608,7 +3601,7 @@ textarea {
   font-family: var(--cq-portfolio-fonts-roboto);
 }
 .contact-cta__wrap {
-  width: min(1100px, 92vw);
+  width: 100%;
   margin-inline: auto;
   display: grid;
   grid-template-columns: 1.25fr 1fr;
@@ -3679,11 +3672,23 @@ textarea {
   gap: 0px 18px;
   align-items: center;
 }
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .intro-card__head {
+    text-align: center;
+  }
+}
 .intro-card__avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .intro-card__avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
 }
 .intro-card__title {
   font-size: 48px;
@@ -3696,7 +3701,6 @@ textarea {
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .intro-card__title {
     font-size: 36px;
-    margin-top: 6px;
   }
 }
 .intro-card__sub {
@@ -3713,6 +3717,11 @@ textarea {
   display: block;
   object-fit: cover;
   filter: drop-shadow(0 2px 10px rgba(255, 140, 0, 0.18));
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .intro-card__sig img {
+    margin: 0 auto;
+  }
 }
 .intro-card__meta {
   list-style: none;
@@ -3829,12 +3838,20 @@ textarea {
 .social-grid .soc-card__copy:hover {
   background: rgba(255, 255, 255, 0.06);
 }
-@media (max-width: 520px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
   .social-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .social-grid .soc-card--email {
-    grid-column: auto;
+    grid-column: 1fr;
+  }
+}
+@media (max-width: 575px) {
+  .social-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .social-grid .soc-card--email {
+    grid-column: 1fr;
   }
 }
 
@@ -3853,6 +3870,11 @@ textarea {
   .intro-footer-info {
     flex-direction: column;
     align-items: start;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .intro-footer-info {
+    align-items: center;
   }
 }
 .intro-footer-info .btn {
