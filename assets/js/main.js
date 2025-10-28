@@ -171,7 +171,25 @@
     // Project Card 
 
 
-    
+    const stackSlider = new Swiper('.tools-swiper', {
+        loop: true,
+        slidesPerView: 5,
+        spaceBetween: 30,
+
+        // Continuous autoplay (no pauses)
+        autoplay: {
+            delay: 0,                 
+            disableOnInteraction: false, 
+            pauseOnMouseEnter: false     
+        },
+        speed: 8000,
+        breakpoints: {
+            0:   { slidesPerView: 2 },
+            768: { slidesPerView: 3, spaceBetween: 16 },
+            992: { slidesPerView: 4, spaceBetween: 16 },
+        },
+    });
+
 
     });
 })(jQuery);
