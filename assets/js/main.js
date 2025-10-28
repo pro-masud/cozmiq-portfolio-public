@@ -60,6 +60,10 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+             breakpoints: {
+                0: { slidesPerView: 1, },
+                768:{ slidesPerView: 2, spaceBetween: 16 },
+            },
         });
 
         $(document).on("click", ".soc-card__copy", async function () {
