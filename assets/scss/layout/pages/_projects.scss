@@ -1,0 +1,235 @@
+@use '../../utils' as *;
+
+
+
+/* ====== Projects Section ====== */
+.projects {
+  &__inner {
+    width: var(--container);
+    margin-inline: auto;
+  }
+
+  /* Header: title + pill button */
+  &__header {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px
+  }
+
+  &__title {
+    font-size: 64px;
+    font-weight: 500;
+    margin: 0;
+    font-family: var(--cq-portfolio-fonts-muli);
+  }
+
+  /* List wrapper */
+  &__list {
+    display: grid;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+  }
+
+  &__item {
+    min-width: 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg);
+  }
+
+  &__item:nth-child(1) {
+    top: 10%;
+  }
+
+  &__item:nth-child(2) {
+    top: 15%;
+  }
+  &__item:nth-child(3) {
+    top: 20%;
+  }
+}
+
+
+/* ====== Pill Button ====== */
+.btn-pill {
+  --pill-bg: var(--brand-icon-bg);
+  --pill-fg: var(--brand-icon-fg);
+
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--border), transparent 30%);
+  background: radial-gradient(120% 120% at 100% 0, rgba(255,255,255,.06), transparent 50%) , var(--pill-bg);
+  color: var(--pill-fg);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+  font-size: 18px;
+  font-family: var(--cq-portfolio-fonts-muli);
+
+  &:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 2px 2px rgba(16,24,40,.06), 0 10px 24px rgba(16,24,40,.12);
+    color: var(--pill-fg);
+  }
+  &:focus-visible { 
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px rgba(17,19,24,.5);
+    color: var(--pill-fg);
+  }
+  &__icon { 
+    flex: 0 0 auto;
+    color: var(--components--buttons-primary--text--text-dark-mode);
+    background-image: linear-gradient(225deg, #ffe254 16%, #ffba49 45%, #ffbb53 84%);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    font-weight: 600;; 
+    box-shadow: inset 0 -1px .7px #f178ae, inset 2px -4px 4px #e9715f99, inset -2px 2px 1.6px #fff6b566, inset 0 -1px 3px #f36e7e80;
+    transform: rotate(-45deg);
+    color: var(--brand-icon-bg);
+  }
+}
+
+/* ====== Card ====== */
+.project-card {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  overflow: clip;
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 2px rgba(16,24,40,.06), 0 12px 28px rgba(16,24,40,.12);
+    border-color: color-mix(in oklab, var(--border), var(--text) 10%);
+  }
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px color-mix(in oklab, var(--text), transparent 70%), 0 12px 28px rgba(16,24,40,.16);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+    padding:  32px;
+
+    @media #{$lg, $md, $sm, $xs} {
+        gap: 0;
+    }
+  }
+
+  /* Left: text block */
+  &__body {
+    display: grid;
+    align-content: space-between;
+    gap: 12px;
+    padding: 30px;
+    @media #{$lg} {
+        padding: 10px;
+    }
+    @media #{$md, $sm, $xs} {
+        padding: 0px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.02em;
+    font-family: var(--cq-portfolio-fonts-muli);
+
+    @media #{$sm, $xs} {
+        font-size: 32px;
+        margin-top: 10px;
+    }
+  }
+
+  &__meta {
+    font-size: 18px;
+    color: var(--muted);
+    margin: 0 0 6px 0;
+    font-family: var(--cq-portfolio-fonts-muli);
+  }
+
+  &__desc {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--muted);
+    margin: 0;
+    max-width: 42ch;
+    font-family: var(--cq-portfolio-fonts-muli);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top:  20px;
+    font-size: 18px;
+    color: var(--text);
+    font-family: var(--cq-portfolio-fonts-muli);
+    & svg{
+      transform: rotate(-45deg);
+      font-size: 24px;
+    }
+  }
+
+  /* Right: image block */
+  &__media {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    background:
+      radial-gradient(120% 120% at 80% 0%, rgba(99, 102, 241, .15), transparent 50%),
+      radial-gradient(120% 120% at 0% 100%, rgba(14, 165, 233, .15), transparent 55%),
+      var(--surface);
+    height: 556px;
+    width: 630px;
+
+    @media #{$lg, $md, $sm, $xs} {
+        height: 400px;
+        width: 100%;
+    }
+
+    @media #{$sm, $xs} {
+        height: 100%;
+        width: 100%;
+         background: unset;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+  }
+}
+
+/* Stack card on small screens */
+ @media #{$lg, $md, $sm, $xs} {
+  .project-card__grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card__media {
+    order: -1; /* image on top */
+  }
+}
