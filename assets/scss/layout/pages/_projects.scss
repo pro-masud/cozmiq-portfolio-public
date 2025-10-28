@@ -15,7 +15,12 @@
     gap: var(--gap);
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 60px
+    margin-bottom: 60px;
+
+    @media #{$sm, $xs} {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
   }
 
   &__title {
@@ -23,6 +28,10 @@
     font-weight: 500;
     margin: 0;
     font-family: var(--cq-portfolio-fonts-muli);
+
+    @media #{$sm, $xs} {
+        font-size: 45px;
+    }
   }
 
   /* List wrapper */
@@ -71,6 +80,9 @@
   transition: transform .18s ease, box-shadow .18s ease;
   font-size: 18px;
   font-family: var(--cq-portfolio-fonts-muli);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   &:hover { 
     transform: translateY(-3px);
