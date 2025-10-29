@@ -172,23 +172,19 @@
 
 
     const stackSlider = new Swiper('.tools-swiper', {
-        loop: true,
-        slidesPerView: 5,
-        spaceBetween: 30,
-
-        // Continuous autoplay (no pauses)
+        slidesPerView: 6,
+        spaceBetween: 50,
+        centeredSlides: false, 
+        loop: true,               
+        loopAdditionalSlides: 20,  
+        allowTouchMove: false,
+        speed: 6000,              
         autoplay: {
-            delay: 0,                 
-            disableOnInteraction: false, 
-            pauseOnMouseEnter: false     
-        },
-        speed: 8000,
-        breakpoints: {
-            0:   { slidesPerView: 2 },
-            768: { slidesPerView: 3, spaceBetween: 16 },
-            992: { slidesPerView: 4, spaceBetween: 16 },
-        },
-    });
+                delay: 0,                
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false
+            }
+        });
 
 
     });

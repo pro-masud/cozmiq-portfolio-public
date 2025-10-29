@@ -101,3 +101,30 @@
 .partners__grid .partner-card {
   background: #2B2E34;
 }
+
+.partners__grid{
+  overflow: hidden;
+  padding: 30px 0px;
+  white-space: nowrap;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+  }
+
+  display: inline-block;
+  animation: 35s slides infinite linear;
+}

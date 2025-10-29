@@ -14,20 +14,24 @@
       font-weight: 500;
       line-height: 71px;
       font-family: var(--cq-portfolio-fonts-muli);
+      margin-bottom: 60px;
 
       @media #{$sm, $xs}{
            font-size: 45px;
            line-height: 54px;
+            margin-bottom: 30px;
         }
     }
   }
 
     .calendar__grid {
-        background: var(--surface);
+        padding: 16px;
+        border-radius: 20px;
         border: 1px solid var(--border);
+        display: block;
+        transition: transform 0.5s ease;
+        background-color: #FCFCFC;
         box-shadow: var(--shadow);
-        border-radius: var(--radius-lg);
-        padding: clamp(12px, 2vw, 20px);
 
         & .cal-embed{
             & span{
@@ -109,5 +113,9 @@
     .tools-swiper .swiper-slide{ margin-right:0 !important; } /* gap handles spacing */
 
     .tools-swiper .swiper-wrapper{
+  transition-timing-function: linear !important;
+}
+
+.tools-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
 }

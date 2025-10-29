@@ -1,5 +1,5 @@
 :root {
-  --bg: #ffffff;
+   --bg: #ffffff;
   --surface: #f7f7f8;
   --border: #ececf1;
   --shadow: 0 1px 1px rgba(16, 24, 40, 0.04), 0 2px 8px rgba(16, 24, 40, 0.06);
@@ -8,10 +8,8 @@
   --brand-icon-bg: #111318;
   --brand-icon-fg: #ffffff;
   --menu-color: #8a8a8a;
-  --gals-color: #FDD756;
-
-  --singe-color: #F5A445;
-
+  --gals-color: #FDD756; // accent 1
+  --singe-color: #F5A445; // accent 2
   --radius: 16px;
   --radius-lg: 22px;
   --gap: clamp(16px, 3vw, 32px);
