@@ -6319,10 +6319,6 @@ textarea {
 }
 
 /* assumes your variables exist in :root */
-.cozmiq-faq {
-  background: var(--surface);
-  font-family: var(--cq-portfolio-fonts-roboto);
-}
 .cozmiq-faq .faq-title {
   font-family: var(--cq-portfolio-fonts-muli);
   color: var(--text);
@@ -6523,23 +6519,6 @@ textarea {
   margin-top: 10px;
   font-weight: 600;
   letter-spacing: 0.2px;
-}
-.cozmiq-faq {
-  /* subtle accent on hover */
-}
-.cozmiq-faq .info-card {
-  position: relative;
-}
-.cozmiq-faq .info-card::after {
-  content: "";
-  position: absolute;
-  left: 22px;
-  bottom: 14px;
-  width: 52px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--gals-color), var(--singe-color));
-  opacity: 0.25;
 }
 .cozmiq-faq {
   /* accessibility */

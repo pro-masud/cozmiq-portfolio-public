@@ -3,8 +3,6 @@
 /* assumes your variables exist in :root */
 
 .cozmiq-faq {
-  background: var(--surface);
-  font-family: var(--cq-portfolio-fonts-roboto);
 
   .faq-title {
     font-family: var(--cq-portfolio-fonts-muli);
@@ -141,13 +139,6 @@
     letter-spacing: .2px;
   }
 
-  /* subtle accent on hover */
-  .info-card { position: relative; }
-  .info-card::after {
-    content:""; position:absolute; left:22px; bottom:14px; width:52px; height:3px;
-    border-radius:999px; background: linear-gradient(90deg, var(--gals-color), var(--singe-color));
-    opacity:.25;
-  }
 
   /* accessibility */
   @media (prefers-reduced-motion: reduce) {
