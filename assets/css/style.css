@@ -4991,7 +4991,7 @@ textarea {
   }
 }
 
-/* Partners / Logos Section */
+/* Partners / Logos Section — CSS-only infinite autoplay with container overflow hidden */
 .partners {
   padding: 120px 20px;
   color: var(--text);
@@ -5006,10 +5006,9 @@ textarea {
     padding: 60px 20px;
   }
 }
-.partners__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 40px);
+.partners > .container {
+  position: relative;
+  overflow: hidden;
 }
 .partners__title {
   font-size: 24px;
@@ -5021,38 +5020,48 @@ textarea {
   display: inline-block;
 }
 .partners__grid {
-  --cols: 5;
-  display: grid;
-  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-  gap: 10px;
+  --slide-size: clamp(180px, 26vw, 260px);
+  --gap: 12px;
+  --speed: 40s;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--gap);
+  align-items: stretch;
   list-style: none;
   margin: 0;
   padding: 0;
+  width: max-content;
+  will-change: transform;
+  animation: partners-marquee var(--speed) linear infinite;
 }
-@media (max-width: 1100px) {
-  .partners__grid {
-    --cols: 4;
-  }
-}
-@media (max-width: 920px) {
-  .partners__grid {
-    --cols: 3;
-  }
-}
-@media (max-width: 680px) {
-  .partners__grid {
-    --cols: 2;
-  }
+.partners__grid:hover {
+  animation-play-state: paused;
 }
 @media (max-width: 420px) {
   .partners__grid {
-    --cols: 1;
+    --slide-size: clamp(200px, 80vw, 260px);
+    --gap: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .partners__grid {
+    animation: none;
+    transform: none;
   }
 }
 .partners__item {
   min-width: 0;
+  flex: 0 0 var(--slide-size);
 }
 
+@keyframes partners-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
 /* Card */
 .partner-card {
   display: block;
@@ -5064,6 +5073,7 @@ textarea {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   will-change: transform;
   overflow: clip;
+  min-height: 120px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -5073,9 +5083,6 @@ textarea {
   transform: translateY(-2px);
   box-shadow: 0 2px 2px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.1);
   border-color: color-mix(in oklab, var(--border), var(--text) 14%);
-}
-.partner-card {
-  /* Focus ring */
 }
 .partner-card:focus-visible {
   outline: 0;
@@ -5103,13 +5110,22 @@ textarea {
   background: #2B2E34;
 }
 
-.partners__grid {
+@keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.logos {
   overflow: hidden;
   padding: 30px 0px;
   white-space: nowrap;
   position: relative;
 }
-.partners__grid::after {
+
+.logos:before, .logos:after {
   position: absolute;
   top: 0;
   content: "";
@@ -5117,17 +5133,19 @@ textarea {
   height: 100%;
   z-index: 2;
 }
-.partners__grid::before {
-  position: absolute;
-  top: 0;
-  content: "";
-  width: 250px;
-  height: 100%;
-  z-index: 2;
-}
-.partners__grid {
+
+.logo_items {
   display: inline-block;
   animation: 35s slides infinite linear;
+}
+
+.logos:hover .logo_items {
+  animation-play-state: paused;
+}
+
+.logo_items img {
+  height: 100px;
+  border-radius: 20px;
 }
 
 /* ====== Projects Section ====== */
@@ -5638,30 +5656,60 @@ textarea {
   display: none;
 }
 
+/* Viewport */
 .slider-shell {
   width: 100%;
   margin: 24px auto;
   padding: 10px;
-  overflow: hidden;
-  /* Edge fade */
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
+  overflow: hidden; /* keep cards inside the container */
 }
 
+/* Shell / height */
 .tools-swiper {
   width: 100%;
-  height: 66px; /* a bit taller than 46 for touch targets */
+  height: 66px; /* your original */
+  position: relative;
+  /* tune speed per slider if needed */
+  --speed: 40s; /* slower = bigger number, faster = smaller number */
 }
 
+/* TRACK: turn wrapper into a moving rail */
+.tools-swiper .swiper-wrapper {
+  display: flex !important;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--gap, 10px);
+  /* make the track exactly as wide as its children */
+  width: max-content;
+  will-change: transform;
+  /* infinite linear motion */
+  animation: tools-marquee var(--speed) linear infinite;
+  /* if user prefers reduced motion, stop autoplay */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-swiper .swiper-wrapper {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+/* Pause on hover (optional—remove if you don't want it) */
+.tools-swiper:hover .swiper-wrapper {
+  animation-play-state: paused;
+}
+
+/* Each slide = fixed-size card (kept from your code) */
 .tools-swiper .swiper-slide {
-  width: 135px !important; /* match your original card width */
-  height: 46px; /* match original height */
+  width: 135px !important; /* original */
+  height: 46px; /* original */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto; /* don't shrink */
+  margin-right: 0 !important; /* spacing handled by gap */
 }
 
-/* Card */
+/* Card (kept from your code) */
 .tool-card {
   width: 135px;
   height: 46px;
@@ -5715,22 +5763,22 @@ textarea {
   color: var(--brand-icon-fg);
 }
 
-/* Spacing between slides (controlled via CSS var from JS for flexibility) */
-.tools-swiper .swiper-wrapper {
-  gap: var(--gap, 10px);
-}
-
-.tools-swiper .swiper-slide {
-  margin-right: 0 !important;
-} /* gap handles spacing */
+/* keep your linear timing tweak */
 .tools-swiper .swiper-wrapper {
   transition-timing-function: linear !important;
 }
 
-.tools-swiper .swiper-wrapper {
-  transition-timing-function: linear !important;
+/* --- Infinite marquee keyframes ---
+   For a seamless loop, duplicate slides once so total rail width ≈ 200%.
+   Then shifting -50% perfectly loops from the 2nd copy back to the 1st. */
+@keyframes tools-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
-
 /* ============ Section ============ */
 .cozmiq-price {
   padding: 0px 0 100px;
