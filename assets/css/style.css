@@ -6318,4 +6318,236 @@ textarea {
   margin-top: 6px;
 }
 
+/* assumes your variables exist in :root */
+.cozmiq-faq {
+  background: var(--surface);
+  font-family: var(--cq-portfolio-fonts-roboto);
+}
+.cozmiq-faq .faq-title {
+  font-family: var(--cq-portfolio-fonts-muli);
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.05;
+}
+.cozmiq-faq .faq-title .muted {
+  color: var(--muted);
+}
+.cozmiq-faq {
+  /* LEFT: FAQ */
+}
+.cozmiq-faq .faq-list {
+  display: grid;
+  gap: 14px;
+}
+.cozmiq-faq .faq-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cozmiq-faq .faq-item:hover {
+  transform: translateY(-2px);
+}
+.cozmiq-faq .faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid transparent;
+}
+.cozmiq-faq .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.cozmiq-faq .faq-item .faq-number {
+  color: var(--muted);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+}
+.cozmiq-faq .faq-item .faq-question {
+  color: var(--text);
+  font-weight: 700;
+  flex: 1 1 auto;
+  font-size: 1.02rem;
+}
+.cozmiq-faq .faq-item .faq-toggle {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  flex: 0 0 24px;
+}
+.cozmiq-faq .faq-item .faq-toggle::before,
+.cozmiq-faq .faq-item .faq-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 14px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.cozmiq-faq .faq-item .faq-toggle::before {
+  transform: rotate(90deg);
+}
+.cozmiq-faq .faq-item .faq-toggle::after {
+  transform: none;
+}
+.cozmiq-faq .faq-item .faq-answer {
+  padding: 0 18px;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height 0.35s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease;
+}
+.cozmiq-faq .faq-item .faq-answer p {
+  color: var(--muted);
+  margin: 12px 0 16px;
+  line-height: 1.6;
+}
+.cozmiq-faq .faq-item[open] summary {
+  border-bottom-color: var(--border);
+}
+.cozmiq-faq .faq-item[open] .faq-toggle::before {
+  opacity: 0;
+  transform: rotate(0deg);
+}
+.cozmiq-faq .faq-item[open] .faq-answer {
+  padding: 10px 18px 16px;
+  max-height: 320px;
+  opacity: 1;
+  transform: none;
+}
+.cozmiq-faq {
+  /* RIGHT: INFO CARD */
+}
+.cozmiq-faq .faq-aside {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .cozmiq-faq .faq-aside {
+    position: sticky;
+    top: 24px;
+  }
+}
+.cozmiq-faq .info-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+.cozmiq-faq .info-head {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.cozmiq-faq .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 1000px;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--border);
+}
+.cozmiq-faq .info-title {
+  font-family: var(--cq-portfolio-fonts-muli);
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.cozmiq-faq .info-title .muted {
+  color: var(--muted);
+  font-weight: 700;
+}
+.cozmiq-faq .info-desc {
+  color: var(--muted);
+  margin-top: 6px;
+}
+.cozmiq-faq .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 10px 16px;
+  background: var(--brand-icon-bg);
+  color: var(--brand-icon-fg);
+  border: 1px solid var(--brand-icon-bg);
+  border-radius: 24px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 0.8px 0.8px -1px rgba(0, 0, 0, 0.33), 0 25px 25px -12px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.cozmiq-faq .btn-cta:hover {
+  transform: translateY(-1px);
+}
+.cozmiq-faq .btn-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex: 0 0 16px;
+}
+.cozmiq-faq .btn-icon::before,
+.cozmiq-faq .btn-icon::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  background: var(--brand-icon-fg);
+  border-radius: 2px;
+}
+.cozmiq-faq {
+  /* simple calendar glyph */
+}
+.cozmiq-faq .btn-icon::before {
+  width: 16px;
+  height: 12px;
+  top: 2px;
+  left: 0;
+  box-shadow: inset 0 0 0 2px var(--brand-icon-fg);
+  background: transparent;
+}
+.cozmiq-faq .btn-icon::after {
+  width: 16px;
+  height: 2px;
+  top: 2px;
+  left: 0;
+}
+.cozmiq-faq .brand-hint {
+  color: var(--menu-color);
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.cozmiq-faq {
+  /* subtle accent on hover */
+}
+.cozmiq-faq .info-card {
+  position: relative;
+}
+.cozmiq-faq .info-card::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: 14px;
+  width: 52px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gals-color), var(--singe-color));
+  opacity: 0.25;
+}
+.cozmiq-faq {
+  /* accessibility */
+}
+@media (prefers-reduced-motion: reduce) {
+  .cozmiq-faq .faq-item, .cozmiq-faq .faq-answer, .cozmiq-faq .faq-toggle::before, .cozmiq-faq .faq-toggle::after, .cozmiq-faq .btn-cta {
+    transition: none !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
