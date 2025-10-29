@@ -5844,7 +5844,7 @@ textarea {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 6px 18px rgba(0, 0, 0, 0.25), 0 22px 36px rgba(0, 0, 0, 0.25);
   color: #fff;
   padding: 30px;
-  width: 400px;
+  width: 490px;
   height: 230px;
   top: 40px;
   left: 40px;
@@ -5854,6 +5854,7 @@ textarea {
     top: 30px;
     left: 30px;
     height: 220px;
+    width: 425px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -5882,6 +5883,8 @@ textarea {
   box-shadow: var(--shadow);
   font-family: var(--cq-portfolio-fonts-muli);
   font-weight: 500;
+  position: relative;
+  z-index: 9;
 }
 .cozmiq-price .promo .promo__art {
   width: 110px;
@@ -6203,6 +6206,116 @@ textarea {
   100% {
     box-shadow: 0 0 0 0 rgba(30, 187, 63, 0);
   }
+}
+.experience-section .section-title {
+  font-family: var(--cq-portfolio-fonts-muli);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 0 20px;
+}
+.experience-section .exp-list {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .experience-section .exp-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .experience-section .exp-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .experience-section .exp-list {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}
+.experience-section .exp-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.experience-section .exp-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 2px rgba(16, 24, 40, 0.06), 0 6px 16px rgba(16, 24, 40, 0.1);
+}
+.experience-section .exp-left {
+  min-width: 0;
+}
+.experience-section .company {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.experience-section .role {
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.experience-section .exp-right .dates {
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+@media (max-width: 576px) {
+  .experience-section .exp-item {
+    flex-wrap: wrap;
+  }
+  .experience-section .exp-right {
+    width: 100%;
+    text-align: right;
+    margin-top: 6px;
+  }
+}
+
+.experience-section .exp-item {
+  position: relative;
+}
+.experience-section .exp-item::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 6px;
+  inset-block: auto 6px;
+  width: 36px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gals-color), var(--singe-color));
+  opacity: 0;
+}
+.experience-section .exp-item:hover::after {
+  opacity: 0.8;
+}
+
+.experience-section .desc {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 6px;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.experience-section .role + .desc {
+  margin-top: 6px;
 }
 
 /*# sourceMappingURL=style.css.map */

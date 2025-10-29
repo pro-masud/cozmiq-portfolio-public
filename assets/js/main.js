@@ -165,27 +165,7 @@
             } else if (!e.shiftKey && document.activeElement === last) {
             e.preventDefault(); $(first).focus();
             }
-        });
-
-
-    // Project Card 
-
-
-    const stackSlider = new Swiper('.tools-swiper', {
-        slidesPerView: 6,
-        spaceBetween: 50,
-        centeredSlides: false, 
-        loop: true,               
-        loopAdditionalSlides: 20,  
-        allowTouchMove: false,
-        speed: 6000,              
-        autoplay: {
-                delay: 0,                
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false
-            }
-        });
-
+        }); 
 
     });
 })(jQuery);
