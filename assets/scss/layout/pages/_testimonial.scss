@@ -1,8 +1,4 @@
 @use '../../utils' as *;
-/* Section */
-.section {
-  padding: clamp(40px, 6vw, 96px) 16px;
-}
 
 /* Grid inside Bootstrap container */
 .t-grid {

@@ -5,32 +5,20 @@
 
 /* ============ Section ============ */
 .cozmiq-price {
-    padding: 0px 0 100px;
+  .pricing-wrapper{
+      padding: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
 
-    @media #{$lg} {
-        padding: 0px 0 80px;
-    }
-    @media #{$md} {
-        padding: 0px 0 60px;
-    }
-    @media #{sm, $xs} {
-        padding: 0px 0 40px;
-    }
-
-    .pricing-wrapper{
-        padding: 40px;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow);
-
-        @media #{$md,$sm} {
-            padding: 15px;
-        }
-         @media #{$xs} {
-            padding: 2px;
-        }
-    }
+      @media #{$md,$sm} {
+          padding: 15px;
+      }
+        @media #{$xs} {
+          padding: 2px;
+      }
+  }
 
   /* ===== Top layout ===== */
   .price__layout {

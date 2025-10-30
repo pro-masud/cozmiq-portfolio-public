@@ -1,11 +1,6 @@
 @use '../../utils' as *;
 
 .calendar{
-
-  @media #{$xs}{
-    padding:  60px  0px;
-  }
-
   & .calendar__header{
     & h2{
       font-size: 64px;

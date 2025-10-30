@@ -328,3 +328,19 @@ textarea{
 	font-size: 14px;
 	opacity: 1;
 }
+
+.section{
+	padding: 60px 20px;
+
+	@media #{$lg} {
+		padding: 40px 0;
+	}
+
+	@media #{$md, $sm} {
+		padding: 30px 20px;
+	}
+
+	@media #{$xs} {
+		padding: 25px 20px;
+	}
+}

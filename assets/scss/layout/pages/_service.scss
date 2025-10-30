@@ -1,11 +1,6 @@
 @use '../../utils' as *;
 
 .services{
-  padding:  120px 20px;
-
-  @media #{$xs}{
-    padding:  60px  0px;
-  }
 
   & .services__header{
     & h2{

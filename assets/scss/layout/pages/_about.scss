@@ -2,11 +2,6 @@
 
 .about-hero {
   background: var(--bg);
-  padding: 60px 20px 120px;
-
-  @media #{$sm, $xs}{
-    padding: 40px 20px 60px;
-  }
 
   &__wrap {
     max-width: 1200px;
