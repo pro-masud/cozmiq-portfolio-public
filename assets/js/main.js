@@ -221,6 +221,40 @@
                 nextSlideMessage: 'Next testimonial',
             },
         });
+
+        // cursor pointer 
+            var $c = $('#mouseCursor');
+            var $o = $('#cursorOuter');
+            var $i = $('#cursorInner');
+            if (!$c.length || !$o.length || !$i.length) return;
+
+
+            var tx = window.innerWidth/2, ty = window.innerHeight/2; // target (mouse)
+            var ox = tx, oy = ty; // outer trail
+
+
+            function setInner(x,y){ $i.css('transform','translate('+x+'px,'+y+'px) translate(-50%,-50%)'); }
+            function setOuter(x,y){ $o.css('transform','translate('+x+'px,'+y+'px) translate(-50%,-50%)'); }
+
+
+            $(document).on('pointermove', function(e){
+            tx = e.clientX; ty = e.clientY; setInner(tx,ty);
+            var interactive = $(e.target).closest('a,button,input,textarea,select,[role="button"],.cursor-hover').length>0;
+            $c.toggleClass('hover', interactive);
+            });
+
+
+            // trailing outer ring
+            (function loop(){
+            ox += (tx - ox) * 0.18; oy += (ty - oy) * 0.18; setOuter(ox,oy); requestAnimationFrame(loop);
+            })();
+
+
+            $(document).on('pointerdown', function(){ $c.addClass('down'); });
+            $(document).on('pointerup', function(){ $c.removeClass('down'); });
+
+
+            if (window.matchMedia && window.matchMedia('(pointer:coarse)').matches) { $c.hide(); }
     });
 })(jQuery);
 

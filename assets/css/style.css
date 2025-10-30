@@ -3961,6 +3961,11 @@ textarea {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 575px) {
+  .cozmiq-header {
+    padding: 16px 10px;
+  }
+}
 .cozmiq-header .header-pill {
   max-width: 780px;
   width: 100%;
@@ -4326,25 +4331,27 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-
-.cozmiq-offcanvas.is-open {
-  transform: translateX(0);
-}
-
-.offcanvas-head {
+.cozmiq-offcanvas .offcanvas-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 16px;
   border-bottom: 1px solid #eee;
 }
-
-.offcanvas-title {
+.cozmiq-offcanvas .offcanvas-title {
   font-size: 18px;
   font-weight: 600;
+  display: inline-block;
+  max-width: 134px;
+  width: 100%;
+  height: 32px;
+  object-fit: contain;
 }
-
-.offcanvas-close {
+.cozmiq-offcanvas .offcanvas-title img {
+  width: 100%;
+  height: 100%;
+}
+.cozmiq-offcanvas .offcanvas-close {
   border: 0;
   background: transparent;
   font-size: 24px;
@@ -4354,29 +4361,180 @@ textarea {
   border-radius: 8px;
   cursor: pointer;
 }
-
-.offcanvas-close:focus {
+.cozmiq-offcanvas .offcanvas-close:focus {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
 }
-
-.offcanvas-body {
-  padding: 14px 16px 24px;
+.cozmiq-offcanvas .offcanvas-body {
   overflow: auto;
 }
-
-.offcanvas-nav a {
+.cozmiq-offcanvas .offcanvas-nav a {
   display: block;
   padding: 10px 12px;
-  border-radius: 10px;
   text-decoration: none;
   color: #111;
+  font-family: var(--cq-portfolio-fonts-muli);
+  border-bottom: 1px solid var(--border);
+  transition: 0.4s;
 }
-
-.offcanvas-nav a:hover {
+.cozmiq-offcanvas .offcanvas-nav a:hover {
+  background-color: var(--brand-icon-bg);
+  color: var(--brand-icon-bg);
+}
+.cozmiq-offcanvas .offcanvas-nav a:hover {
   background: #f4f4f5;
 }
 
+.cozmiq-offcanvas.is-open {
+  transform: translateX(0);
+}
+
+a,
+button,
+input,
+textarea,
+select,
+[role=button],
+.cursor-hover {
+  cursor: none;
+}
+
+.mouseCursor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+.cursor-outer,
+.cursor-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* sizes */
+.cursor-outer {
+  width: 36px;
+  height: 36px;
+}
+
+.cursor-inner {
+  width: 12px;
+  height: 12px;
+}
+
+/* visuals */
+.cursor-outer .ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid #083c31;
+  background: rgba(6, 78, 59, 0.55);
+  box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.15) inset, 0 0 10px rgba(6, 78, 59, 0.25);
+}
+
+.cursor-inner .dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #2ef5a2;
+  box-shadow: 0 0 12px rgba(46, 245, 162, 0.95);
+}
+
+/* === Infinite moving layer (SVG line) === */
+.sweep {
+  position: absolute;
+  inset: 0;
+}
+
+.sweep svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.sweepCircle {
+  fill: none;
+  stroke: #2ef5a2;
+  stroke-opacity: 0.85;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 26 280;
+  animation: dashMove 1.2s linear infinite;
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -306;
+  }
+}
+/* === Dot status: infinite pulse + ripple === */
+.dot {
+  animation: dotPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(46, 245, 162, 0.9);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 0 18px rgb(46, 245, 162);
+  }
+}
+.dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  border: 2px solid rgba(46, 245, 162, 0.9);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.8;
+  animation: ripple 1.2s ease-out infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.8);
+    opacity: 0;
+  }
+}
+/* hover & click */
+.hover .cursor-outer {
+  width: 44px;
+  height: 44px;
+}
+
+.down .dot {
+  transform: scale(0.9);
+}
+
+/* accessibility */
+@media (pointer: coarse) {
+  .mouseCursor {
+    display: none;
+  }
+  html, body, a, button {
+    cursor: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sweepCircle, .dot, .dot::after {
+    animation: none !important;
+  }
+}
 .about-hero {
   background: var(--bg);
 }

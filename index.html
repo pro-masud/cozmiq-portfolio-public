@@ -17,7 +17,11 @@
     <!-- Offcanvas -->
     <aside class="cozmiq-offcanvas" id="cozmiq-offcanvas" aria-hidden="true">
         <div class="offcanvas-head">
-            <div class="offcanvas-title">Offcanvas Menu</div>
+            <div class="offcanvas-title">
+                <a href="/" class="brand">
+                    <img src="https://cdn.prod.website-files.com/667c1fe7c451b2511da725f9/667c6cece51815be19e61cc5_header-logo-portfolix-x-webflow-template.png" alt="">
+                </a>
+            </div>
             <button class="offcanvas-close" aria-label="বন্ধ করুন">&times;</button>
         </div>
         <div class="offcanvas-body">
@@ -33,6 +37,19 @@
     </aside>
 
     <div class="cozmiq-overlay" hidden></div>
+    
+    <!-- cursor nodes -->
+    <div class="mouseCursor" id="mouseCursor">
+        <div class="cursor-outer" id="cursorOuter">
+            <span class="ring"></span>
+            <span class="sweep" aria-hidden="true">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                    <circle class="sweepCircle" cx="50" cy="50" r="45" />
+                </svg>
+            </span>
+        </div>
+        <div class="cursor-inner" id="cursorInner"><span class="dot"></span></div>
+    </div>
 
     <!-- Header -->
     <header class="cozmiq-header">
