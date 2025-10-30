@@ -2,11 +2,16 @@
 
 .experience-section {
   .section-title {
+    font-size: 45px;
+    font-weight: 500;
+    margin: 0;
     font-family: var(--cq-portfolio-fonts-muli);
-    color: var(--text);
-    font-weight: 700;
-    letter-spacing: .2px;
-    padding: 0 20px;
+    text-align: center;
+
+    @media #{$sm, $xs} {
+        font-size: 40px;
+    }
+
   }
 
   .exp-list {

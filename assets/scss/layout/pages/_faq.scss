@@ -5,11 +5,19 @@
 .cozmiq-faq {
 
   .faq-title {
+     font-size: 64px;
+    font-weight: 500;
+    margin: 0;
     font-family: var(--cq-portfolio-fonts-muli);
-    color: var(--text);
-    font-weight: 800;
-    line-height: 1.05;
-    .muted { color: var(--muted); }
+
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media #{$sm, $xs} {
+        font-size: 45px;
+    }
   }
 
   /* LEFT: FAQ */
@@ -32,6 +40,7 @@
       display: flex; align-items: center; gap: 14px;
       border-bottom: 1px solid transparent;
       &::-webkit-details-marker { display: none; }
+      font-family: var(--cq-portfolio-fonts-muli);
     }
 
     .faq-number {
@@ -39,6 +48,7 @@
       font-weight: 600;
       font-variant-numeric: tabular-nums;
       min-width: 2ch;
+      font-family: var(--cq-portfolio-fonts-muli);
     }
 
     .faq-question {
@@ -46,6 +56,7 @@
       font-weight: 700;
       flex: 1 1 auto;
       font-size: 1.02rem;
+      font-family: var(--cq-portfolio-fonts-muli);
     }
 
     .faq-toggle { width:24px;height:24px;position:relative;flex:0 0 24px; }
@@ -62,7 +73,9 @@
       padding: 0 18px;
       max-height: 0; opacity: 0; transform: translateY(-4px);
       transition: max-height .35s ease, opacity .25s ease, transform .25s ease, padding .25s ease;
-      p { color: var(--muted); margin: 12px 0 16px; line-height: 1.6; }
+      p { color: var(--muted); margin: 12px 0 16px; line-height: 1.6;
+        font-family: var(--cq-portfolio-fonts-muli);
+      }
     }
 
     &[open] {
@@ -86,7 +99,13 @@
     padding: 22px;
   }
 
-  .info-head { display:flex; gap:14px; align-items:flex-start; margin-bottom: 12px; }
+  .info-head { 
+    display:flex; 
+    gap:14px; 
+    align-items:flex-start; 
+    margin-bottom: 12px; 
+    flex-direction: column;
+  }
   .avatar {
     width:64px; height:64px; border-radius: 1000px; object-fit: cover;
     box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--border);
@@ -100,7 +119,10 @@
     .muted { color: var(--muted); font-weight: 700; }
   }
 
-  .info-desc { color: var(--muted); margin-top: 6px; }
+  .info-desc { 
+    color: var(--muted); margin-top: 6px;
+    font-family: var(--cq-portfolio-fonts-muli);
+   }
 
   .btn-cta {
     display:inline-flex; align-items:center; gap:10px;
@@ -116,6 +138,7 @@
     text-decoration: none;
     font-weight: 600;
     transition: transform .15s ease, box-shadow .2s ease;
+    font-family: var(--cq-portfolio-fonts-muli);
 
     &:hover { transform: translateY(-1px); }
   }

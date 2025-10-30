@@ -7,7 +7,7 @@
   gap: clamp(24px, 5vw, 72px);
   align-items: center;
 
-  @media (max-width: 960px) {
+  @media #{$lg, $md, $sm, $xs}  {
     grid-template-columns: 1fr;
     gap: var(--gap);
   }
@@ -17,22 +17,34 @@
 .title-stack {
   display: grid;
   align-content: start;
-  gap: clamp(16px, 2vw, 24px);
+  gap: 24px;
   padding-left: clamp(0px, 2vw, 8px);
 
   h2 {
-    font-size: var(--heading-size);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    font-size: 64px;
+    font-weight: 500;
     margin: 0;
-    font-weight: 700;
+    font-family: var(--cq-portfolio-fonts-muli);
+
+    @media #{$lg, $md, $sm, $xs} {
+      text-align: center;
+    }
+
+    @media #{$sm, $xs} {
+        font-size: 45px;
+    }
   }
 
   .cta-row {
     display: flex;
     gap: 12px;
     align-items: center;
-    margin-top: clamp(20px, 5vw, 48px);
+    margin-top: 48px;
+
+    @media #{$lg, $md, $sm, $xs} {
+      justify-content: center;
+       margin-top: 8px;
+    }
   }
 }
 
