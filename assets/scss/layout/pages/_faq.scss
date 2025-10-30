@@ -168,3 +168,29 @@
     .faq-item, .faq-answer, .faq-toggle::before, .faq-toggle::after, .btn-cta { transition: none !important; }
   }
 }
+
+
+
+
+#cozmiq-faq.cozmiq-faq {
+  overflow: visible;
+
+  @media (min-width: 992px) {
+    .row.g-4 {
+      align-items: stretch !important;
+    }
+
+    .faq-aside {
+      position: sticky;
+      top: 40%;         
+      align-self: start;  
+    }
+  }
+}
+
+/* Safety: prevent accidental clipping on common ancestors */
+#cozmiq-faq .container,
+#cozmiq-faq .row,
+#cozmiq-faq .col-lg-4 {
+  overflow: visible;
+}

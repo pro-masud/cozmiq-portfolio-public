@@ -168,12 +168,10 @@ body {
   line-height: 26px;
 }
 
-/* Lenis থাকলে native smooth বন্ধ রাখো */
 html {
   scroll-behavior: auto !important;
 }
 
-/* (ঐচ্ছিক) fixed/sticky header কে আলাদা লেয়ারে দাও—ফ্লিকার কমে */
 .cozmiq-header {
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -6414,6 +6412,27 @@ textarea {
   }
 }
 
+#cozmiq-faq.cozmiq-faq {
+  overflow: visible;
+}
+@media (min-width: 992px) {
+  #cozmiq-faq.cozmiq-faq .row.g-4 {
+    align-items: stretch !important;
+  }
+  #cozmiq-faq.cozmiq-faq .faq-aside {
+    position: sticky;
+    top: 40%;
+    align-self: start;
+  }
+}
+
+/* Safety: prevent accidental clipping on common ancestors */
+#cozmiq-faq .container,
+#cozmiq-faq .row,
+#cozmiq-faq .col-lg-4 {
+  overflow: visible;
+}
+
 /* Grid inside Bootstrap container */
 .t-grid {
   display: grid;
@@ -6832,6 +6851,107 @@ textarea {
     justify-content: center;
     margin-top: 8px;
   }
+}
+
+.cq-blog-single .cq-blog-header {
+  background: var(--bg);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+  font-family: var(--cq-portfolio-fonts-muli);
+}
+.cq-blog-single .cq-blog-header .inner-1090 {
+  max-width: 1090px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.cq-blog-single .cq-blog-header .inner-770 {
+  max-width: 770px;
+}
+.cq-blog-single .cq-blog-header .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--menu-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.cq-blog-single .cq-blog-header .back-link:hover {
+  color: var(--text);
+}
+.cq-blog-single .cq-blog-header .back-link .back-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-icon-bg);
+  color: var(--brand-icon-fg);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+.cq-blog-single .cq-blog-header .header-body {
+  margin-top: 28px;
+}
+.cq-blog-single .cq-blog-header .meta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.cq-blog-single .cq-blog-header .meta-row .badge.category {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+.cq-blog-single .cq-blog-header .meta-row .badge.category:hover {
+  transform: translateY(-1px);
+}
+.cq-blog-single .cq-blog-header .meta-row .badge.category {
+  /* optional accent versions */
+}
+.cq-blog-single .cq-blog-header .meta-row .badge.category.-gals {
+  background: var(--gals-color);
+  border-color: transparent;
+}
+.cq-blog-single .cq-blog-header .meta-row .badge.category.-singe {
+  background: var(--singe-color);
+  border-color: transparent;
+}
+.cq-blog-single .cq-blog-header .meta-row .date {
+  font-size: 14px;
+  color: var(--muted);
+}
+.cq-blog-single .cq-blog-header .title {
+  font-family: var(--cq-portfolio-fonts-roboto);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  /* big, responsive like the screenshot */
+  font-size: clamp(2.2rem, 4.2vw + 0.5rem, 4.2rem);
+  margin: 6px 0 14px;
+}
+.cq-blog-single .cq-blog-header .excerpt {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.cq-blog-single {
+  /* Optional: a subtle container background so header stands out */
+}
+.cq-blog-single .cq-blog-single {
+  background: var(--bg);
 }
 
 /*# sourceMappingURL=style.css.map */

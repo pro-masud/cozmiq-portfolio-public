@@ -147,11 +147,9 @@ body {
 	line-height: 26px;
 }
 
-/* Lenis থাকলে native smooth বন্ধ রাখো */
 html { scroll-behavior: auto !important; }
 
 
-/* (ঐচ্ছিক) fixed/sticky header কে আলাদা লেয়ারে দাও—ফ্লিকার কমে */
 .cozmiq-header {
   backface-visibility: hidden;
   transform: translateZ(0);

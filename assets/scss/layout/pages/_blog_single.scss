@@ -1,0 +1,89 @@
+@use '../../utils' as *;
+
+.cq-blog-single {
+    .cq-blog-header {
+    background: var(--bg);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+
+    font-family: var(--cq-portfolio-fonts-muli);
+
+    .inner-1090 { max-width: 1090px; margin: 0 auto; padding: 0 16px; }
+    .inner-770  { max-width: 770px;  }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        line-height: 1;
+        color: var(--menu-color);
+        text-decoration: none;
+        transition: color .2s ease;
+
+        &:hover { color: var(--text); }
+
+        .back-icon {
+        width: 32px; height: 32px;
+        display: grid; place-items: center;
+        background: var(--brand-icon-bg);
+        color: var(--brand-icon-fg);
+        border-radius: 50%;
+        box-shadow: var(--shadow);
+        }
+    }
+
+    .header-body { margin-top: 28px; }
+
+    .meta-row {
+        display: flex; align-items: center; gap: 14px;
+        margin-bottom: 18px;
+
+        .badge.category {
+        display: inline-flex; align-items: center;
+        height: 32px; padding: 0 14px;
+        font-size: 13px; font-weight: 600;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        text-decoration: none;
+        transition: transform .15s ease;
+
+        &:hover { transform: translateY(-1px); }
+        /* optional accent versions */
+        &.-gals   { background: var(--gals-color);  border-color: transparent; }
+        &.-singe  { background: var(--singe-color); border-color: transparent; }
+        }
+
+        .date {
+        font-size: 14px;
+        color: var(--muted);
+        }
+    }
+
+    .title {
+        font-family: var(--cq-portfolio-fonts-roboto);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        /* big, responsive like the screenshot */
+        font-size: clamp(2.2rem, 4.2vw + 0.5rem, 4.2rem);
+        margin: 6px 0 14px;
+    }
+
+    .excerpt {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.7;
+        margin-top: 8px;
+    }
+    }
+
+    /* Optional: a subtle container background so header stands out */
+    .cq-blog-single {
+    background: var(--bg);
+    }
+
+}
