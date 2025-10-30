@@ -55,94 +55,94 @@
 
 
 
-/* Viewport */
-.slider-shell{
-  width:100%;
-  margin:24px auto;
-  padding:10px;
-  overflow:hidden; /* keep cards inside the container */
-}
+// /* Viewport */
+// .slider-shell{
+//   width:100%;
+//   margin:24px auto;
+//   padding:10px;
+//   overflow:hidden; /* keep cards inside the container */
+// }
 
-/* Shell / height */
-.tools-swiper{
-  width:100%;
-  height:66px; /* your original */
-  position: relative;
-  /* tune speed per slider if needed */
-  --speed: 40s; /* slower = bigger number, faster = smaller number */
-}
+// /* Shell / height */
+// .tools-swiper{
+//   width:100%;
+//   height:66px; /* your original */
+//   position: relative;
+//   /* tune speed per slider if needed */
+//   --speed: 40s; /* slower = bigger number, faster = smaller number */
+// }
 
-/* TRACK: turn wrapper into a moving rail */
-.tools-swiper .swiper-wrapper{
-  display:flex !important;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: var(--gap,10px);
+// /* TRACK: turn wrapper into a moving rail */
+// .tools-swiper .swiper-wrapper{
+//   display:flex !important;
+//   flex-wrap: nowrap;
+//   align-items: center;
+//   gap: var(--gap,10px);
 
-  /* make the track exactly as wide as its children */
-  width: max-content;
-  will-change: transform;
+//   /* make the track exactly as wide as its children */
+//   width: max-content;
+//   will-change: transform;
 
-  /* infinite linear motion */
-  animation: tools-marquee var(--speed) linear infinite;
+//   /* infinite linear motion */
+//   animation: tools-marquee var(--speed) linear infinite;
 
-  /* if user prefers reduced motion, stop autoplay */
-}
-@media (prefers-reduced-motion: reduce){
-  .tools-swiper .swiper-wrapper{
-    animation: none !important;
-    transform: none !important;
-  }
-}
+//   /* if user prefers reduced motion, stop autoplay */
+// }
+// @media (prefers-reduced-motion: reduce){
+//   .tools-swiper .swiper-wrapper{
+//     animation: none !important;
+//     transform: none !important;
+//   }
+// }
 
-/* Pause on hover (optional—remove if you don't want it) */
-.tools-swiper:hover .swiper-wrapper{
-  animation-play-state: paused;
-}
+// /* Pause on hover (optional—remove if you don't want it) */
+// .tools-swiper:hover .swiper-wrapper{
+//   animation-play-state: paused;
+// }
 
-/* Each slide = fixed-size card (kept from your code) */
-.tools-swiper .swiper-slide{
-  width:135px !important;  /* original */
-  height:46px;             /* original */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex: 0 0 auto;          /* don't shrink */
-  margin-right:0 !important; /* spacing handled by gap */
-}
+// /* Each slide = fixed-size card (kept from your code) */
+// .tools-swiper .swiper-slide{
+//   width:135px !important;  /* original */
+//   height:46px;             /* original */
+//   display:flex;
+//   align-items:center;
+//   justify-content:center;
+//   flex: 0 0 auto;          /* don't shrink */
+//   margin-right:0 !important; /* spacing handled by gap */
+// }
 
-/* Card (kept from your code) */
-.tool-card{
-  width:135px;
-  height:46px;
-  background:#1d1d1d69;
-  border:1px dashed var(--muted);
-  border-radius:4px;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:6px;
-  box-sizing:border-box;
-}
-.tool-icon{ width:22px; height:22px; border-radius:4px; overflow:hidden; flex:0 0 22px; }
-.tool-icon img{ width:100%; height:100%; object-fit:cover; display:block; }
-.tool-texts{ display:flex; flex-direction:column; gap:2px; min-width:0; }
-.tool-title{
-  font-weight:600; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  color: var(--brand-icon-fg);
-}
-.tool-sub{
-  font-size:9px; line-height:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  color: var(--brand-icon-fg);
-}
+// /* Card (kept from your code) */
+// .tool-card{
+//   width:135px;
+//   height:46px;
+//   background:#1d1d1d69;
+//   border:1px dashed var(--muted);
+//   border-radius:4px;
+//   display:flex;
+//   align-items:center;
+//   gap:8px;
+//   padding:6px;
+//   box-sizing:border-box;
+// }
+// .tool-icon{ width:22px; height:22px; border-radius:4px; overflow:hidden; flex:0 0 22px; }
+// .tool-icon img{ width:100%; height:100%; object-fit:cover; display:block; }
+// .tool-texts{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+// .tool-title{
+//   font-weight:600; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+//   color: var(--brand-icon-fg);
+// }
+// .tool-sub{
+//   font-size:9px; line-height:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+//   color: var(--brand-icon-fg);
+// }
 
-/* keep your linear timing tweak */
-.tools-swiper .swiper-wrapper{ transition-timing-function: linear !important; }
+// /* keep your linear timing tweak */
+// .tools-swiper .swiper-wrapper{ transition-timing-function: linear !important; }
 
-/* --- Infinite marquee keyframes ---
-   For a seamless loop, duplicate slides once so total rail width ≈ 200%.
-   Then shifting -50% perfectly loops from the 2nd copy back to the 1st. */
-@keyframes tools-marquee{
-  from{ transform: translate3d(0,0,0); }
-  to  { transform: translate3d(-50%,0,0); }
-}
+// /* --- Infinite marquee keyframes ---
+//    For a seamless loop, duplicate slides once so total rail width ≈ 200%.
+//    Then shifting -50% perfectly loops from the 2nd copy back to the 1st. */
+// @keyframes tools-marquee{
+//   from{ transform: translate3d(0,0,0); }
+//   to  { transform: translate3d(-50%,0,0); }
+// }
