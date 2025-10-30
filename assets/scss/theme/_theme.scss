@@ -328,17 +328,17 @@ textarea{
 }
 
 .section{
-	padding: 60px 20px;
+	padding: 60px 0px;
 
 	@media #{$lg} {
-		padding: 40px 0;
+		padding: 40px 20;
 	}
 
 	@media #{$md, $sm} {
-		padding: 30px 20px;
+		padding: 30px 15px;
 	}
 
 	@media #{$xs} {
-		padding: 25px 20px;
+		padding: 25px 10px;
 	}
 }

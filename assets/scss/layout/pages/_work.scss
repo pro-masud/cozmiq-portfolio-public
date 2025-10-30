@@ -3,6 +3,11 @@
 
 /* Partners / Logos Section — CSS-only infinite autoplay with container overflow hidden */
 .partners {
+
+  @media #{$lg, $md, $sm, $xs}  {
+    margin-top: 0px;
+  }
+
   > .container {
     position: relative;
     overflow: hidden; 

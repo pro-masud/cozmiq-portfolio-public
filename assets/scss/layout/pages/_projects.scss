@@ -240,6 +240,7 @@
  @media #{$lg, $md, $sm, $xs} {
   .project-card__grid {
     grid-template-columns: 1fr;
+    padding: 20px;
   }
   .project-card__media {
     order: -1; /* image on top */

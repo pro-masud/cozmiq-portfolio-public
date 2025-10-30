@@ -343,21 +343,21 @@ textarea {
 }
 
 .section {
-  padding: 60px 20px;
+  padding: 60px 0px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .section {
-    padding: 40px 0;
+    padding: 40px 20;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
   .section {
-    padding: 30px 20px;
+    padding: 30px 15px;
   }
 }
 @media (max-width: 575px) {
   .section {
-    padding: 25px 20px;
+    padding: 25px 10px;
   }
 }
 
@@ -5006,6 +5006,11 @@ textarea {
 }
 
 /* Partners / Logos Section — CSS-only infinite autoplay with container overflow hidden */
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .partners {
+    margin-top: 0px;
+  }
+}
 .partners > .container {
   position: relative;
   overflow: hidden;
@@ -5385,6 +5390,7 @@ textarea {
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .project-card__grid {
     grid-template-columns: 1fr;
+    padding: 20px;
   }
   .project-card__media {
     order: -1; /* image on top */
@@ -5645,13 +5651,23 @@ textarea {
   }
 }
 .calendar .calendar__grid {
-  padding: 16px;
+  padding: 100px 50px 50px;
   border-radius: 20px;
   border: 1px solid var(--border);
   display: block;
   transition: transform 0.5s ease;
   background-color: #FCFCFC;
   box-shadow: var(--shadow);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .calendar .calendar__grid {
+    padding: 50px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .calendar .calendar__grid {
+    padding: 20px;
+  }
 }
 .calendar .calendar__grid .cal-embed span {
   display: none;
@@ -6856,7 +6872,6 @@ textarea {
 .cq-blog-single .cq-blog-header {
   background: var(--bg);
   color: var(--text);
-  border-bottom: 1px solid var(--border);
   padding: 48px 0;
   font-family: var(--cq-portfolio-fonts-muli);
 }
@@ -6872,24 +6887,14 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1;
-  color: var(--menu-color);
+  color: var(--brand-icon-bg);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 .cq-blog-single .cq-blog-header .back-link:hover {
   color: var(--text);
-}
-.cq-blog-single .cq-blog-header .back-link .back-icon {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  background: var(--brand-icon-bg);
-  color: var(--brand-icon-fg);
-  border-radius: 50%;
-  box-shadow: var(--shadow);
 }
 .cq-blog-single .cq-blog-header .header-body {
   margin-top: 28px;
@@ -6903,16 +6908,21 @@ textarea {
 .cq-blog-single .cq-blog-header .meta-row .badge.category {
   display: inline-flex;
   align-items: center;
-  height: 32px;
+  height: 45px;
   padding: 0 14px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--text);
-  background: var(--surface);
+  color: var(--surface);
+  background: var(--brand-icon-bg);
   border: 1px solid var(--border);
   border-radius: 999px;
   text-decoration: none;
   transition: transform 0.15s ease;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .cq-blog-single .cq-blog-header .meta-row .badge.category {
+    font-size: 14px;
+  }
 }
 .cq-blog-single .cq-blog-header .meta-row .badge.category:hover {
   transform: translateY(-1px);
@@ -6929,23 +6939,56 @@ textarea {
   border-color: transparent;
 }
 .cq-blog-single .cq-blog-header .meta-row .date {
-  font-size: 14px;
-  color: var(--muted);
+  font-size: 18px;
+  color: var(--brand-icon-bg);
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .cq-blog-single .cq-blog-header .meta-row .date {
+    font-size: 14px;
+  }
 }
 .cq-blog-single .cq-blog-header .title {
   font-family: var(--cq-portfolio-fonts-roboto);
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.05;
-  /* big, responsive like the screenshot */
-  font-size: clamp(2.2rem, 4.2vw + 0.5rem, 4.2rem);
+  font-size: 64px;
   margin: 6px 0 14px;
+  max-width: 940px;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .cq-blog-single .cq-blog-header .title {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .cq-blog-single .cq-blog-header .title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 575px) {
+  .cq-blog-single .cq-blog-header .title {
+    font-size: 32px;
+  }
 }
 .cq-blog-single .cq-blog-header .excerpt {
   color: var(--muted);
   font-size: 16px;
   line-height: 1.7;
   margin-top: 8px;
+}
+.cq-blog-single .cq-blog-header .blog-single-thumbnail {
+  width: 100%;
+  max-height: 960px;
+  border-radius: 32px;
+  height: 100%;
+}
+.cq-blog-single .cq-blog-header .blog-single-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 .cq-blog-single {
   /* Optional: a subtle container background so header stands out */

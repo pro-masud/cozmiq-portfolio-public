@@ -20,13 +20,20 @@
   }
 
     .calendar__grid {
-        padding: 16px;
+        padding: 100px 50px 50px;
         border-radius: 20px;
         border: 1px solid var(--border);
         display: block;
         transition: transform 0.5s ease;
         background-color: #FCFCFC;
         box-shadow: var(--shadow);
+
+        @media #{$lg, $md}{
+          padding: 50px;
+        }
+        @media #{$sm, $xs}{
+          padding: 20px;
+        }
 
         & .cal-embed{
             & span{
