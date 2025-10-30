@@ -59,6 +59,32 @@
             
         });
 
+        // blog Slider
+        var Blog = new Swiper(".blog-work-slider", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            centeredSlides: false,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+             breakpoints: {
+                0: { slidesPerView: 1, },
+                768:{ slidesPerView: 2, spaceBetween: 16 },
+                992:{ slidesPerView: 3, spaceBetween: 16 },
+            },
+            navigation: {
+                nextEl: '.blog-next',
+                prevEl: '.blog-prev',
+            },
+            a11y: {
+                enabled: true,
+                prevSlideMessage: 'Previous testimonial',
+                nextSlideMessage: 'Next testimonial',
+            },
+            
+        });
+
         $(document).on("click", ".soc-card__copy", async function () {
             const $btn  = $(this);
             const $icon = $btn.find("i");
