@@ -167,5 +167,23 @@
             }
         }); 
 
+
+        // Testimonial Slider 
+        const TestimonialSlider = new Swiper('.testimonial-swiper', {
+            speed: 500,
+            loop: true,
+            autoHeight: true,
+            allowTouchMove: true,
+            keyboard: { enabled: true },
+            navigation: {
+            nextEl: '.testimonial-next',
+            prevEl: '.testimonial-prev',
+            },
+            a11y: {
+                enabled: true,
+                prevSlideMessage: 'Previous testimonial',
+                nextSlideMessage: 'Next testimonial',
+            },
+        });
     });
 })(jQuery);

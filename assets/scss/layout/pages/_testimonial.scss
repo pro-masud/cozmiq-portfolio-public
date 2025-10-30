@@ -1,0 +1,116 @@
+@use '../../utils' as *;
+/* Section */
+.section {
+  padding: clamp(40px, 6vw, 96px) 16px;
+}
+
+/* Grid inside Bootstrap container */
+.t-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+}
+
+/* Left side */
+.title-stack {
+  display: grid;
+  align-content: start;
+  gap: clamp(16px, 2vw, 24px);
+  padding-left: clamp(0px, 2vw, 8px);
+
+  h2 {
+    font-size: var(--heading-size);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: clamp(20px, 5vw, 48px);
+  }
+}
+
+/* Arrow buttons */
+.nav-btn {
+  --size: 48px;
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+
+  &:hover { transform: translateY(-1px); background: #fff; }
+  &:active { transform: translateY(0); }
+  &:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--singe-color) 50%, white);
+    outline-offset: 2px;
+  }
+
+  svg { width: 22px; height: 22px; }
+}
+
+/* Swiper */
+.swiper { width: 100%; }
+.swiper-slide { display: block; } // prevents height jump with fade
+
+/* Card */
+.testimonial-card {
+  // Soft neutral card like the screenshot
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: clamp(28px, 4.8vw, 48px);
+
+  p {
+    font-size: clamp(18px, 2.2vw, 22px);
+    line-height: 1.6;
+    margin: 0 0 28px 0;
+    max-width: 62ch;
+    color: #6b7280; // muted like screenshot
+  }
+}
+
+/* Author row */
+.author-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  align-items: center;
+
+  .avatar {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: var(--shadow);
+
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  }
+
+  .author-name {
+    font-weight: 700;
+    font-family: var(--cq-portfolio-fonts-roboto);
+  }
+
+  .author-meta {
+    color: var(--muted);
+    font-size: 14px;
+  }
+}

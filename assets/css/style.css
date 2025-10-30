@@ -135,11 +135,14 @@
   --brand-icon-bg: #111318;
   --brand-icon-fg: #ffffff;
   --menu-color: #8a8a8a;
-  --gals-color: #FDD756;
-  --singe-color: #F5A445;
+  --gals-color: #FDD756; /* accent 1 */
+  --singe-color: #F5A445; /* accent 2 */
   --radius: 16px;
   --radius-lg: 22px;
   --gap: clamp(16px, 3vw, 32px);
+  --container-max: 1200px;
+  --heading-size: clamp(28px, 4vw, 64px);
+  --lead-size: clamp(16px, 2.2vw, 20px);
 }
 
 :root {
@@ -6527,6 +6530,131 @@ textarea {
   .cozmiq-faq .faq-item, .cozmiq-faq .faq-answer, .cozmiq-faq .faq-toggle::before, .cozmiq-faq .faq-toggle::after, .cozmiq-faq .btn-cta {
     transition: none !important;
   }
+}
+
+/* Section */
+.section {
+  padding: clamp(40px, 6vw, 96px) 16px;
+}
+
+/* Grid inside Bootstrap container */
+.t-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+}
+@media (max-width: 960px) {
+  .t-grid {
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+  }
+}
+
+/* Left side */
+.title-stack {
+  display: grid;
+  align-content: start;
+  gap: clamp(16px, 2vw, 24px);
+  padding-left: clamp(0px, 2vw, 8px);
+}
+.title-stack h2 {
+  font-size: var(--heading-size);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-weight: 700;
+}
+.title-stack .cta-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: clamp(20px, 5vw, 48px);
+}
+
+/* Arrow buttons */
+.nav-btn {
+  --size: 48px;
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.nav-btn:hover {
+  transform: translateY(-1px);
+  background: #fff;
+}
+.nav-btn:active {
+  transform: translateY(0);
+}
+.nav-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--singe-color) 50%, white);
+  outline-offset: 2px;
+}
+.nav-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Swiper */
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: block;
+}
+
+/* Card */
+.testimonial-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: clamp(28px, 4.8vw, 48px);
+}
+.testimonial-card p {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  max-width: 62ch;
+  color: #6b7280;
+}
+
+/* Author row */
+.author-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.author-row .avatar {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: var(--shadow);
+}
+.author-row .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.author-row .author-name {
+  font-weight: 700;
+  font-family: var(--cq-portfolio-fonts-roboto);
+}
+.author-row .author-meta {
+  color: var(--muted);
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=style.css.map */
