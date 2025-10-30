@@ -4535,6 +4535,172 @@ select,
     animation: none !important;
   }
 }
+@keyframes plx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes plx-slide {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+@keyframes plx-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.plx-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plx-loader {
+  --plx-bg: #0b1020;
+  --plx-scrim: rgba(0, 0, 0, 0.5);
+  --plx-card: rgba(255, 255, 255, 0.06);
+  --plx-border: rgba(255, 255, 255, 0.12);
+  --plx-text: #ffffff;
+  --plx-muted: rgba(255, 255, 255, 0.72);
+  --plx-ring1: #6366f1;
+  --plx-ring2: #3b82f6;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  background: var(--plx-bg);
+}
+.plx-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.plx-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(30rem 30rem at 20% 20%, rgba(255, 255, 255, 0.08), transparent 60%), linear-gradient(180deg, var(--plx-scrim), var(--plx-scrim));
+}
+@supports (background: color-mix(in srgb, #000 50%, #fff)) {
+  .plx-loader::before {
+    background: radial-gradient(30rem 30rem at 20% 20%, rgba(255, 255, 255, 0.08), transparent 60%), radial-gradient(24rem 24rem at 80% 30%, color-mix(in srgb, var(--plx-ring2) 25%, transparent), transparent 60%), radial-gradient(16rem 16rem at 70% 80%, color-mix(in srgb, var(--plx-ring1) 28%, transparent), transparent 60%), linear-gradient(180deg, var(--plx-scrim), var(--plx-scrim));
+  }
+}
+.plx-loader__card {
+  position: relative;
+  width: min(92vw, 480px);
+  border-radius: 16px;
+  border: 1px solid var(--plx-border);
+  background: var(--plx-card);
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+.plx-loader__spinner {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+}
+.plx-loader__spinner .plx-loader__base {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.14);
+}
+.plx-loader__spinner .plx-loader__rotor {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: var(--plx-ring1);
+  border-right-color: var(--plx-ring2);
+  animation: plx-spin 1.2s linear infinite;
+}
+.plx-loader__message {
+  color: var(--plx-text);
+  text-align: center;
+  font-weight: 600;
+  margin: 8px 0 2px;
+  font-family: var(--cq-portfolio-fonts-muli);
+  font-size: 18px;
+}
+.plx-loader__subtext {
+  color: var(--plx-muted);
+  text-align: center;
+  margin: 0;
+  font-family: var(--cq-portfolio-fonts-muli);
+  font-size: 16px;
+}
+.plx-loader__progress {
+  height: 8px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.plx-loader__progress .plx-loader__bar {
+  height: 100%;
+  width: 33%;
+  background: linear-gradient(90deg, var(--plx-ring1), var(--plx-ring2));
+  border-radius: 999px;
+  animation: plx-slide 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.plx-loader__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.plx-loader__dots > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  animation: plx-bounce 0.9s ease-in-out infinite;
+}
+.plx-loader__dots > span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.plx-loader__dots > span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.plx-loader--inline {
+  position: absolute;
+  inset: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.plx-loader--no-blur__card {
+  backdrop-filter: none;
+}
+.plx-loader--light {
+  --plx-bg: #f6f7fb;
+  --plx-scrim: rgba(255,255,255,.7);
+  --plx-card: rgba(255,255,255,.9);
+  --plx-border: rgba(0,0,0,.08);
+  --plx-text: #0b1020;
+  --plx-muted: rgba(0,0,0,.65);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plx-loader__dots > span,
+  .plx-loader__progress .plx-loader__bar,
+  .plx-loader__spinner .plx-loader__rotor {
+    animation: none !important;
+  }
+}
 .about-hero {
   background: var(--bg);
 }

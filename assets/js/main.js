@@ -252,9 +252,11 @@
 
             $(document).on('pointerdown', function(){ $c.addClass('down'); });
             $(document).on('pointerup', function(){ $c.removeClass('down'); });
-
-
             if (window.matchMedia && window.matchMedia('(pointer:coarse)').matches) { $c.hide(); }
+
+
+            // page loaded 
+            $(window).on('load', function () { $('.plx-loader').addClass('is-hidden'); });
     });
 })(jQuery);
 
