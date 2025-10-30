@@ -139,6 +139,18 @@
       }
     }
   }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 48px;
+
+    @media #{$lg, $md, $sm, $xs} {
+      justify-content: center;
+       margin-top: 8px;
+    }
+  }
 }
 
 .recent-work-container{

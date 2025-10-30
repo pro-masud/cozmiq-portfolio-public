@@ -277,6 +277,7 @@
       color: #fff;
       border-color: #000;
       display: inline-flex; align-items: center; gap: 10px;
+      font-size: 14px;
 
       .stripe-ball {
         display: inline-grid; place-items: center;
@@ -361,12 +362,13 @@
     }
 
     .single__cta { 
+      font-size: 14px;
         justify-self: center; 
         @media #{$lg, $md, $sm, $xs} {
             justify-self: start; 
         }
     }
-    .receipt { font-size: 16px; margin-right: 6px; }
+    .receipt { font-size: 14px; margin-right: 6px; }
   }
 }
 

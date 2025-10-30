@@ -5613,6 +5613,18 @@ textarea {
 .Recent-work-slider .single-work-item a:hover .work-image img {
   transform: scale(1.1);
 }
+.Recent-work .cta-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 48px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .Recent-work .cta-row {
+    justify-content: center;
+    margin-top: 8px;
+  }
+}
 
 .recent-work-container {
   max-width: 1360px;
@@ -5929,6 +5941,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  font-size: 14px;
 }
 .cozmiq-price .btn--primary .stripe-ball {
   display: inline-grid;
@@ -6036,6 +6049,7 @@ textarea {
   transform: rotate(45deg);
 }
 .cozmiq-price .single .single__cta {
+  font-size: 14px;
   justify-self: center;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
@@ -6044,7 +6058,7 @@ textarea {
   }
 }
 .cozmiq-price .single .receipt {
-  font-size: 16px;
+  font-size: 14px;
   margin-right: 6px;
 }
 

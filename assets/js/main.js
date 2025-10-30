@@ -47,6 +47,16 @@
                 0: { slidesPerView: 1, },
                 768:{ slidesPerView: 2, spaceBetween: 16 },
             },
+            navigation: {
+                nextEl: '.recent-next',
+                prevEl: '.recent-prev',
+            },
+            a11y: {
+                enabled: true,
+                prevSlideMessage: 'Previous testimonial',
+                nextSlideMessage: 'Next testimonial',
+            },
+            
         });
 
         $(document).on("click", ".soc-card__copy", async function () {
