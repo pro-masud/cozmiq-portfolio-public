@@ -5917,6 +5917,7 @@ textarea {
   font-weight: 800;
   cursor: pointer;
   transition: transform 0.06s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: var(--cq-portfolio-fonts-muli);
 }
 .cozmiq-price .btn:active {
   transform: translateY(1px);
@@ -6003,6 +6004,7 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px 18px;
+  font-family: var(--cq-portfolio-fonts-muli);
 }
 @media (max-width: 575px) {
   .cozmiq-price .single .single__features {
@@ -6455,6 +6457,7 @@ textarea {
   width: var(--size);
   border: 1px solid var(--border);
   background: var(--surface);
+  font-family: var(--cq-portfolio-fonts-muli);
   border-radius: 999px;
   display: grid;
   place-items: center;
@@ -6494,6 +6497,7 @@ textarea {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   padding: clamp(28px, 4.8vw, 48px);
+  font-family: var(--cq-portfolio-fonts-muli);
 }
 .testimonial-card p {
   font-size: clamp(18px, 2.2vw, 22px);
@@ -6501,6 +6505,7 @@ textarea {
   margin: 0 0 28px 0;
   max-width: 62ch;
   color: #6b7280;
+  font-family: var(--cq-portfolio-fonts-muli);
 }
 
 /* Author row */
